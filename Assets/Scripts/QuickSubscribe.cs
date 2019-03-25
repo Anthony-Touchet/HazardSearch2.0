@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuickSubscribe : MonoBehaviour
 {
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
-    
+
     [SerializeField]
     private SubscriptionEvent[] m_subscriptionEvents;
        
@@ -20,7 +20,7 @@ public class QuickSubscribe : MonoBehaviour
 
     public void NotifySubscribers(string message)
     {
-        Mouledoux.Components.Mediator.instance.NotifySubscribers(message, new Mouledoux.Callback.Packet());
+        Mouledoux.Components.Mediator.instance.NotifySubscribers(message);
     }
 
     void OnDestroy()

@@ -32,26 +32,166 @@
         private System.Collections.Generic.Dictionary<string, Callback.Callback> subscriptions =
             new System.Collections.Generic.Dictionary<string, Callback.Callback>();
 
+        /// <summary>
+        /// Dictionary of blocked messages, and their expiration time
+        /// </summary>
+        private System.Collections.Generic.Dictionary<string, BlockedMessage> blockedMessages =
+            new System.Collections.Generic.Dictionary<string, BlockedMessage>();
+
+
+
 
         /// <summary>
         /// Checks to see if their are any Subscribers to the broadcasted message
         /// and invokes ALL callbacks associated with it
         /// </summary>
+        /// 
         /// <param name="message">The message to be broadcasted (case sensitive)</param>
-        /// <param name="data">Packet of information to be used by ALL recieving parties</param>
-        public void NotifySubscribers(string message, Callback.Packet data)
+        /// <param name="data">Packet of information to be used by ALL receiving parties</param>    
+        /// 
+        /// <returns>
+        /// 0 the message was broadcasted successfully
+        /// -1 the message is blocked
+        /// </returns>
+        public int NotifySubscribers(string message, Callback.Packet data = null)
         {
+            message = message.ToLower();
+
+            // Temporary BlockedMessage for checking blacklist
+            BlockedMessage blocked;
+
+            // Checks if the message is being blocked, and reduces the remaining time if it is
+            if(blockedMessages.TryGetValue(message, out blocked))
+                if (blocked.blockTime < 0 || --blocked.blockTime > 0) return -1;
+
+            // Makes sure the datapack has been set to something, even if one isn't provided
+            data = data == null ? new Callback.Packet() : data;
+
             // Temporary delegate container for modifying subscription delegates 
             Callback.Callback cb;
 
             // Check to see if the message has any valid subscriptions
             if (instance.subscriptions.TryGetValue(message, out cb))
             {
-                // Invokes ALL associated delegates with the data Packet as the argument
+                // Checks all references in the delegate, and removes any with missing target objects
+                for(int i = cb.GetInvocationList().Length - 1; i >= 0; i--)
+                    if (cb.GetInvocationList()[i].Target == null)
+                        cb -= (Callback.Callback)cb.GetInvocationList()[i];
+
+                // Invokes all remaining associated delegates with the data Packet as the argument
                 cb.Invoke(data);
+            }
+
+            return 0;
+        }
+
+        ///// Old quick broadcast
+        ///// <summary>
+        ///// Checks to see if their are any Subscribers to the broadcasted message
+        ///// and invokes ALL callbacks associated with it with an empty packet
+        ///// </summary>
+        ///// 
+        ///// <param name="message">The message to be broadcasted (case sensitive)</param>
+        /////         
+        ///// <returns>
+        ///// 0 the message was broadcasted successfully
+        ///// 1 the message was blocked, but is now valid
+        ///// -1 the message is blocked
+        ///// </returns>
+        //public int NotifySubscribers(string message)
+        //{
+        //    Callback.Packet data = new Callback.Packet();
+        //    return NotifySubscribers(message, data);
+        //}
+
+
+
+
+        /// <summary>
+        /// Disables the message without unsubscribing
+        /// </summary>
+        /// 
+        /// <param name="message">Message to be blocked</param>
+        /// <param name="blockTime">How many times the message will be blocked before the block expires</param>
+        /// <param name="additive">If the blockTime passed should be added to the remaining time, or replace the remaining time, if the message is already blocked</param>
+        /// 
+        /// <returns>
+        /// 0 the message has been blocked
+        /// 1 the message is already blocked
+        /// </returns>
+        public int BlockMessage(string message, int blockTime, bool additive = false)
+        {
+            message = message.ToLower();
+
+            if (blockedMessages.ContainsKey(message))
+            {
+                blockTime += additive ? blockedMessages[message].blockTime : 0;
+
+                blockedMessages.Remove(message);
+                BlockMessage(message, blockTime);
+
+                return 1;
+            }
+
+            else
+            {
+                blockedMessages.Add(message, new BlockedMessage(message, blockTime));
+                return 0;
             }
         }
 
+        /// <summary>
+        /// Unblocks a previously blocked message
+        /// </summary>
+        /// 
+        /// <param name="message">Message to be unblocked</param>
+        /// 
+        /// <returns>
+        /// 0 message was unblocked
+        /// -1 message was not blocked to begin
+        /// </returns>
+        public int UnblockMessage(string message)
+        {
+            message = message.ToLower();
+
+            if (!blockedMessages.ContainsKey(message)) return -1;
+            
+            blockedMessages.Remove(message);
+            return 0;
+        }
+
+
+
+
+
+        /// <summary>
+        /// Struct for storing a blocked message, and expiration time
+        /// </summary>
+        private struct BlockedMessage
+        {
+            /// <summary>
+            /// Constructor for blocked messages
+            /// </summary>
+            /// <param name="aMessage">Message to be blocked</param>
+            /// <param name="aBlockTime">How many broadcast attempty will be blocked. Set to -1 for infinity</param>
+            public BlockedMessage(string aMessage, int aBlockTime)
+            {
+                message = aMessage.ToLower();
+                blockTime = aBlockTime;
+            }
+
+
+            /// <summary>
+            /// Message to be blocked
+            /// </summary>
+            public string message;
+
+            /// <summary>
+            /// How many times the message will be rejected before the block expires
+            /// Less than 0 requires manual unblocking
+            /// </summary>
+            public int blockTime;
+        }
 
         /// <summary>
         /// Base class for all entities that will be listing for broadcasts
@@ -64,14 +204,17 @@
             private System.Collections.Generic.Dictionary<string, Callback.Callback> localSubscriptions =
                  new System.Collections.Generic.Dictionary<string, Callback.Callback>();
 
+
             /// <summary>
             /// Links a custom delegate to a message in a SPECIFIC subscription dictionary
             /// </summary>
-            /// <param name="container">Refrence to the dictionary of subscriptions we want to modify</param>
+            /// <param name="container">Reference to the dictionary of subscriptions we want to modify</param>
             /// <param name="message">The message to subscribe to (case sensitive)</param>
             /// <param name="callback">The delegate to be linked to the broadcast message</param>
             private void Subscribe(ref System.Collections.Generic.Dictionary<string, Callback.Callback> container, string message, Callback.Callback callback)
             {
+                message = message.ToLower();
+
                 // Temporary delegate container for modifying subscription delegates 
                 Callback.Callback cb;
 
@@ -100,9 +243,9 @@
             /// <param name="callback">The delegate to be linked to the broadcast message</param>
             public void Subscribe(string message, Callback.Callback callback)
             {
-                // First, adds the subscription to the internaal records
+                // First, adds the subscription to the internal records
                 Subscribe(ref localSubscriptions, message, callback);
-                // Then, adds the subcription to the public records
+                // Then, adds the subscription to the public records
                 Subscribe(ref instance.subscriptions, message, callback);
             }
 
@@ -110,11 +253,13 @@
             /// <summary>
             /// Unlinks a custom delegate from a message in a SPECIFIC subscription dictionary
             /// </summary>
-            /// <param name="container">Refrence to the dictionary of subscriptions we want to modify</param>
+            /// <param name="container">Reference to the dictionary of subscriptions we want to modify</param>
             /// <param name="message">The message to unsubscribe from (case sensitive)</param>
             /// <param name="callback">The delegate to be removed from the broadcast message</param>
-            public void Unsubscribe(ref System.Collections.Generic.Dictionary<string, Callback.Callback> container, string message, Callback.Callback callback)
+            private void Unsubscribe(ref System.Collections.Generic.Dictionary<string, Callback.Callback> container, string message, Callback.Callback callback)
             {
+                message = message.ToLower();
+                
                 // Temporary delegate container for modifying subscription delegates 
                 Callback.Callback cb;
 
@@ -131,7 +276,7 @@
                     // Check the modified cb to see if there are any delegates left
                     if (cb == null)
                     {
-                        // If tere is not, then remove the subscription completely
+                        // If there is not, then remove the subscription completely
                         container.Remove(message);
                     }
                     else
@@ -152,7 +297,7 @@
             {
                 // First, remove the subscription from the internal records
                 Unsubscribe(ref localSubscriptions, message, callback);
-                // Then, remove the subcription from the public records
+                // Then, remove the subscription from the public records
                 Unsubscribe(ref instance.subscriptions, message, callback);
             }
 
@@ -161,7 +306,7 @@
             /// Unlinks all (local) delegates from given broadcast message
             /// </summary>
             /// <param name="message">The message to unsubscribe from (case sensitive)</param>
-            public void UnsubcribeAllFrom(string message)
+            public void UnsubscribeAllFrom(string message)
             {
                 Unsubscribe(message, localSubscriptions[message]);
             }
@@ -169,8 +314,8 @@
 
             /// !!! IMPORTANT !!! ///
             /// The method below - UnsubscribeAll()
-            /// MUST BE CALLED whenever a class inheriting from subscriber is removed
-            /// If it is not, you WILL get NULL REFRENCE ERRORS
+            /// MUST BE CALLED whenever a class using a subscriber is removed
+            /// If it is not, you WILL get NULL REFERENCE ERRORS
 
             /// <summary>
             /// Unlinks all (local) delegates from every (local) broadcast message

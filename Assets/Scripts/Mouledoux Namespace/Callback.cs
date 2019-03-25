@@ -9,6 +9,7 @@
     /// <summary>
     /// Collecion of basic variables to be sent via delegates
     /// </summary>
+    [System.Serializable]
     public sealed class Packet
     {
         /// <summary>
@@ -55,4 +56,16 @@
             this.strings = strings;
         }
     }
+
+    /* Hash packet, removed for now
+    public sealed class HashPacket
+    {
+        public System.Collections.Hashtable hashData;
+
+        public HashPacket()
+        {
+            hashData = new System.Collections.Hashtable();
+        }
+    }
+    *******************************************************/
 }
