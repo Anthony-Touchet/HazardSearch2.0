@@ -14,6 +14,11 @@ public class ForceTeleport : MonoBehaviour
     public List<Transform> railPoints;
     public int currentPoint = 0;
 
+    private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = 
+    new Mouledoux.Components.Mediator.Subscriptions();
+
+    Mouledoux.Callback.Callback nextRailHandeler = null;
+
     // ---------- ---------- ---------- ---------- ---------- 
     private void Start()
     {
@@ -23,8 +28,16 @@ public class ForceTeleport : MonoBehaviour
         objectRef.transform.position = railPoints[currentPoint].position;
         originalPos = objectRef.transform.localPosition;
         originalRot = objectRef.transform.localRotation;
+
+        nextRailHandeler += NextRailPoint;
+        m_subscriptions.Subscribe("MoveToNextRailPoint", nextRailHandeler);
     }
 
+
+    private void OnDestroy()
+    {
+        m_subscriptions.UnsubscribeAll();
+    }
 
     public void SetoriginalPos()
     {
@@ -154,5 +167,10 @@ public class ForceTeleport : MonoBehaviour
         }
 
         StartTeleport(railPoints[currentPoint]);
+    }
+
+    public void NextRailPoint(Mouledoux.Callback.Packet data)
+    {
+        NextRailPoint();
     }
 }
