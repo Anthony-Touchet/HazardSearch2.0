@@ -774,7 +774,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1555660417526995377}
-        m_MethodName: BroadcastMessage
+        m_MethodName: NotifySubscribers
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1069,6 +1069,7 @@ GameObject:
   - component: {fileID: 6013601517080289919}
   - component: {fileID: 6013601517080289918}
   - component: {fileID: 110605797270583923}
+  - component: {fileID: 8717763949430479057}
   m_Layer: 5
   m_Name: Are you Sure Button
   m_TagString: Untagged
@@ -1267,7 +1268,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042dd67148e516641995a04ed246d6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_subscriptionEvents: []
+  m_subscriptionEvents:
+  - m_subMessage: AllClearButton
+    m_event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6013601517080289908}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+--- !u!114 &8717763949430479057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013601517080289908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba518842058f3d4480bd6f66f02b6a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeDelay: 0.1
+  m_DelayedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6013601517080289908}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &6013601517127918580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1672,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHandClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2908879181481408077}
+        m_MethodName: NotifySubscribers
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AllClearButton
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Valve.VR.InteractionSystem.CustomEvents+UnityEventHand, SteamVR, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2908879181481408077
