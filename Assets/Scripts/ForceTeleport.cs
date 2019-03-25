@@ -20,7 +20,6 @@ public class ForceTeleport : MonoBehaviour
         if (objectRef == null)
         { objectRef = gameObject; }
 
-        blindfold.gameObject.SetActive(false);
         objectRef.transform.position = railPoints[currentPoint].position;
         originalPos = objectRef.transform.localPosition;
         originalRot = objectRef.transform.localRotation;
@@ -117,9 +116,6 @@ public class ForceTeleport : MonoBehaviour
 
         if (blindfold != null)
         {
-            if(!blindfold.gameObject.activeSelf)
-                blindfold.gameObject.SetActive(true);
-                
             Color c = blindfold.color;
             print(blindfold.color);
             c.a = 1f;
