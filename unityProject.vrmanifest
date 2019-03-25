@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.hazardsearch2.0.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\Documents\\GitHub\\HazardSearch2.0\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "HazardSearch2.0 [Testing]"
+        }
+      }
+    }
+  ]
+}

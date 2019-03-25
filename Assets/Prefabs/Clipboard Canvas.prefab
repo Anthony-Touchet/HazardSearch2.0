@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 6013601516500863287}
   - component: {fileID: 6013601516500863284}
   - component: {fileID: 6013601516500863291}
+  - component: {fileID: 1555660417526995377}
   m_Layer: 5
   m_Name: How to Button
   m_TagString: Untagged
@@ -677,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -774,6 +775,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Valve.VR.InteractionSystem.CustomEvents+UnityEventHand, SteamVR, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1555660417526995377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013601516500863281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042dd67148e516641995a04ed246d6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_subscriptionEvents: []
 --- !u!1 &6013601516714477459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1057,7 @@ GameObject:
   - component: {fileID: 6013601517080289914}
   - component: {fileID: 6013601517080289919}
   - component: {fileID: 6013601517080289918}
+  - component: {fileID: 110605797270583923}
   m_Layer: 5
   m_Name: Are you Sure Button
   m_TagString: Untagged
@@ -1121,7 +1136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1215,9 +1230,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHandClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 110605797270583923}
+        m_MethodName: NotifySubscribers
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MoveToNextRailPoint
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Valve.VR.InteractionSystem.CustomEvents+UnityEventHand, SteamVR, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &110605797270583923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013601517080289908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042dd67148e516641995a04ed246d6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_subscriptionEvents: []
 --- !u!1 &6013601517127918580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1441,7 @@ GameObject:
   - component: {fileID: 6013601517235083573}
   - component: {fileID: 6013601517235083578}
   - component: {fileID: 6013601517235083577}
+  - component: {fileID: 2908879181481408077}
   m_Layer: 5
   m_Name: All Clear Button
   m_TagString: Untagged
@@ -1480,7 +1520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1577,3 +1617,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Valve.VR.InteractionSystem.CustomEvents+UnityEventHand, SteamVR, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2908879181481408077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013601517235083575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042dd67148e516641995a04ed246d6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_subscriptionEvents: []
