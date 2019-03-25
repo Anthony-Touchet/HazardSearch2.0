@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 6013601515763383706}
   - component: {fileID: 6013601515763383707}
   m_Layer: 5
-  m_Name: Text
+  m_Name: How to Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 6013601516454707494}
   - component: {fileID: 6013601516454707495}
   - component: {fileID: 6013601516454707488}
+  - component: {fileID: 3157991583066564550}
   m_Layer: 5
   m_Name: Clipboard Canvas
   m_TagString: Untagged
@@ -585,6 +586,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3157991583066564550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013601516454707489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7256baddd24796c45a431bf8a01266be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6013601516500863281
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +633,7 @@ RectTransform:
   m_Children:
   - {fileID: 6013601515763383700}
   - {fileID: 6013601517234300126}
+  - {fileID: 1676961873717512815}
   m_Father: {fileID: 6013601516454707493}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -781,7 +795,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: HowToButton
+          m_StringArgument: HowToButtonToggle
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: Valve.VR.InteractionSystem.CustomEvents+UnityEventHand, SteamVR, Version=0.0.0.0,
@@ -798,7 +812,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042dd67148e516641995a04ed246d6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_subscriptionEvents: []
+  m_subscriptionEvents:
+  - m_subMessage: HowToButtonToggle
+    m_event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3157991583066564550}
+          m_MethodName: ToggleOnOff
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6013601515763383701}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3157991583066564550}
+          m_MethodName: ToggleOnOff
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6313914097762520836}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3157991583066564550}
+          m_MethodName: ToggleOnOff
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6013601516751444536}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1 &6013601516714477459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1223,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 6013601517080289913}
   m_OnClick:
     m_PersistentCalls:
@@ -1268,24 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042dd67148e516641995a04ed246d6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_subscriptionEvents:
-  - m_subMessage: AllClearButton
-    m_event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6013601517080289908}
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+  m_subscriptionEvents: []
 --- !u!114 &8717763949430479057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,16 +1334,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba518842058f3d4480bd6f66f02b6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TimeDelay: 0.1
+  m_TimeDelay: 8
   m_DelayedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6013601517080289908}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 3157991583066564550}
+        m_MethodName: ToggleButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 6013601517080289914}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1499,7 +1535,7 @@ GameObject:
   - component: {fileID: 6013601517235083573}
   - component: {fileID: 6013601517235083578}
   - component: {fileID: 6013601517235083577}
-  - component: {fileID: 2908879181481408077}
+  - component: {fileID: 1119521071446699094}
   m_Layer: 5
   m_Name: All Clear Button
   m_TagString: Untagged
@@ -1673,7 +1709,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2908879181481408077}
+      - m_Target: {fileID: 110605797270583923}
         m_MethodName: NotifySubscribers
         m_Mode: 5
         m_Arguments:
@@ -1686,7 +1722,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Valve.VR.InteractionSystem.CustomEvents+UnityEventHand, SteamVR, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2908879181481408077
+--- !u!114 &1119521071446699094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1698,4 +1734,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042dd67148e516641995a04ed246d6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_subscriptionEvents: []
+  m_subscriptionEvents:
+  - m_subMessage: AllClearButton
+    m_event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3157991583066564550}
+          m_MethodName: ToggleButton
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6013601517080289914}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 8717763949430479057}
+          m_MethodName: StartDelayEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+--- !u!1 &6313914097762520836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1676961873717512815}
+  - component: {fileID: 6611635831388980433}
+  - component: {fileID: 237664003924686099}
+  m_Layer: 5
+  m_Name: Got it Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1676961873717512815
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313914097762520836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6013601516500863280}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6611635831388980433
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313914097762520836}
+  m_CullTransparentMesh: 0
+--- !u!114 &237664003924686099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313914097762520836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: I understand
