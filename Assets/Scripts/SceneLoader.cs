@@ -38,7 +38,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (onLoadMessage == null) onLoadMessage = "";
         
-        Mouledoux.Components.Mediator.instance.NotifySubscribers(onLoadMessage, new Mouledoux.Callback.Packet());
+        Mouledoux.Components.Mediator.instance.NotifySubscribers(onLoadMessage);
         print(onLoadMessage);
     }
 }
