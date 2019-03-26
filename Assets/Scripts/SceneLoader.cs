@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string onLoadMessage;
+    public string[] onLoadMessages;
     
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions =
     new Mouledoux.Components.Mediator.Subscriptions();
@@ -31,14 +31,23 @@ public class SceneLoader : MonoBehaviour
 
     public void SetLoadMessage(string newMessage)
     {
-        instance.onLoadMessage = newMessage;
+        string[] newMessages = newMessage.Split(',');
+        SetLoadMessage(newMessages);
+    }
+
+    public void SetLoadMessage(string[] newMessages)
+    {
+        instance.onLoadMessages = newMessages;
     }
 
     private void OnLevelWasLoaded()
     {
-        if (onLoadMessage == null) onLoadMessage = "";
-        
-        Mouledoux.Components.Mediator.instance.NotifySubscribers(onLoadMessage);
-        print(onLoadMessage);
+        foreach(string onLoadMessage in onLoadMessages)
+        {
+            if (onLoadMessage == null) continue;
+            
+            Mouledoux.Components.Mediator.instance.NotifySubscribers(onLoadMessage.Trim());
+            print(onLoadMessage);
+        }
     }
 }
