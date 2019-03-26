@@ -18,6 +18,7 @@ public class SceneLoader : MonoBehaviour
             if (_instance == null) _instance = FindObjectOfType<SceneLoader>();
             return _instance;
         }
+
     }
 
     private void Awake()
