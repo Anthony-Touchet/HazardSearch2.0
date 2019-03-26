@@ -19,4 +19,8 @@ public class Clipboard_Manager : MonoBehaviour
     {
         button.interactable = !button.interactable;
     }
+
+    public void AppendText(Text textField, string appendage){
+        textField.text += appendage + "\n";
+    }
 }
