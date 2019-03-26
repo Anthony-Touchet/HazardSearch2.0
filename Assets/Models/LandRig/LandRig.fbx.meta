@@ -2029,7 +2029,12 @@ ModelImporter:
     10800038: Spot_Light_7
     10800040: Spot_Light_8
     10800042: Spot_Light_9
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mudpit
+    second: {fileID: 2100000, guid: 97538ffc7024ff742916f32e85fad635, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
