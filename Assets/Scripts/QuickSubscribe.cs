@@ -20,6 +20,7 @@ public class QuickSubscribe : MonoBehaviour
 
     public void NotifySubscribers(string message)
     {
+        print(message);
         Mouledoux.Components.Mediator.instance.NotifySubscribers(message);
     }
 
