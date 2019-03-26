@@ -23,6 +23,11 @@ public class UIUtils : MonoBehaviour
         GoToScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
+    public void GoToScene(Dropdown dropdown)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(dropdown.captionText.text);
+    }
+
 
     public void GoToSceneAsync(int index)
     {
@@ -43,6 +48,11 @@ public class UIUtils : MonoBehaviour
     public void ReloadCurrentSceneAsync()
     {
         GoToSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+
+    public void GoToSceneAsync(Dropdown dropdown)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(dropdown.captionText.text);
     }
 
 
