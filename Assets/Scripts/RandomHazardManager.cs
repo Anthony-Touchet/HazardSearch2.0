@@ -55,9 +55,33 @@ public class RandomHazardManager : MonoBehaviour
                    
                 else
                     LoopList(.5f, m_seed);
-                                        
+
                 break;
         }
+    }
+
+    public void SetFrequency(int frequency){
+        switch(frequency){
+            case 1:
+                m_hazardFrequency = HazardFrequency.AFEW;
+                break;
+            
+            case 2:
+                m_hazardFrequency = HazardFrequency.MOST;
+                break;
+
+            case 3:
+                m_hazardFrequency = HazardFrequency.ALOT;
+                break;
+
+            default:
+                m_hazardFrequency = HazardFrequency.ALL;
+                break;
+        }
+    }
+
+    public void SetSeed(int seed){
+        m_seed = seed;
     }
 
     private void LoopList(float frequency, int seed){
