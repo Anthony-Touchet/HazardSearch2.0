@@ -221,7 +221,7 @@ public class RandomHazardManager : MonoBehaviour
         else{
             result += "Here are some you missed:\n";
             foreach(string s in missedHazardsName){
-                result += s+"\n";
+                result += s+", ";
             }
         }
             
