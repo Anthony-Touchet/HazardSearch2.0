@@ -15,6 +15,8 @@ public class Clipboard_Manager : MonoBehaviour
     private Mouledoux.Callback.Callback setBigText;
     private Mouledoux.Callback.Callback appendSmallText;
     private Mouledoux.Callback.Callback setSmallText;
+    private Mouledoux.Callback.Callback setReview;
+
 
     void Awake(){
         Initalize();
@@ -25,11 +27,13 @@ public class Clipboard_Manager : MonoBehaviour
         setBigText = SetBigText;
         appendSmallText = AppendSmallText;
         setSmallText = SetSmallText;
+        setReview = PrintReview;
 
         m_subscriptions.Subscribe("appendbigtext", appendBigText);
         m_subscriptions.Subscribe("setbigtext", setBigText);
         m_subscriptions.Subscribe("appendsmalltext", appendSmallText);
         m_subscriptions.Subscribe("setsmalltext", setSmallText);
+        m_subscriptions.Subscribe("setreview", setReview);
     }
 
     public void ToggleOnOff(GameObject gameObject)
@@ -69,5 +73,9 @@ public class Clipboard_Manager : MonoBehaviour
 
     private void AppendSmallText(Mouledoux.Callback.Packet packet){
         AppendText(m_smallText, packet.strings[0]);
+    }
+
+    private void PrintReview(Mouledoux.Callback.Packet packet){
+        SetText(m_bigText, RandomHazardManager.instance.MakeResultString());
     }
 }

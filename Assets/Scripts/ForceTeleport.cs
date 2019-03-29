@@ -162,7 +162,7 @@ public class ForceTeleport : MonoBehaviour
         currentPoint++;
         if(currentPoint >= railPoints.Count)
         {
-            //Send to the reveiw screen
+            Mouledoux.Components.Mediator.instance.NotifySubscribers("setreview");
             return;
         }
 
