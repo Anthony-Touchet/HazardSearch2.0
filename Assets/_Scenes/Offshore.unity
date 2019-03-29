@@ -3874,7 +3874,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.01
+    widthMultiplier: 0.03
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -3909,7 +3909,7 @@ LineRenderer:
       ctime6: 65535
       ctime7: 0
       atime0: 0
-      atime1: 65535
+      atime1: 32768
       atime2: 65535
       atime3: 0
       atime4: 0

@@ -54,7 +54,15 @@ public class InteractableObject : MonoBehaviour
         m_subscriptions.Subscribe(self.GetInstanceID().ToString() + "->offinteract", offInteract);
     }
 
+    void OnDestroy()
+    {
+        ClearSubscriptions();
+    }
 
+    public void ClearSubscriptions()
+    {
+        m_subscriptions.UnsubscribeAll();
+    }
 
     protected void OnHighlight(Mouledoux.Callback.Packet packet)
     {
