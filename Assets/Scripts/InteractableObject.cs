@@ -29,10 +29,10 @@ public class InteractableObject : MonoBehaviour
 
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
 
-    protected Mouledoux.Callback.Callback onHighlight;
-    protected Mouledoux.Callback.Callback offHighlight;
-    protected Mouledoux.Callback.Callback onInteract;
-    protected Mouledoux.Callback.Callback offInteract;
+    protected Mouledoux.Callback.Callback onHighlight = null;
+    protected Mouledoux.Callback.Callback offHighlight = null;
+    protected Mouledoux.Callback.Callback onInteract = null;
+    protected Mouledoux.Callback.Callback offInteract = null;
 
     protected void Start()
     {
@@ -41,11 +41,11 @@ public class InteractableObject : MonoBehaviour
 
     protected void Initialize(GameObject self)
     {
-        onHighlight = OnHighlight;
-        offHighlight = OffHighlight;
+        onHighlight += OnHighlight;
+        offHighlight += OffHighlight;
 
-        onInteract = OnInteract;
-        offInteract = OffInteract;
+        onInteract += OnInteract;
+        offInteract += OffInteract;
 
         m_subscriptions.Subscribe(self.GetInstanceID().ToString() + "->onhighlight", onHighlight);
         m_subscriptions.Subscribe(self.GetInstanceID().ToString() + "->offhighlight", offHighlight);
