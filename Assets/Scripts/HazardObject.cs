@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class HazardObject : InteractableObject
 {
-    public int m_scoreValue;
+    public float m_scoreValue;
     
     public void IncreaseScore()
     {
-        //ScoreManager.instance.m_currentScore += m_scoreValue;
+        var packet = new Mouledoux.Callback.Packet();
+        packet.floats = new float[]{m_scoreValue};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("incrementcurrentscore", packet);
     }
 }
