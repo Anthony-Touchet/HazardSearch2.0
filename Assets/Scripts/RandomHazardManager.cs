@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class RandomHazardManager : MonoBehaviour
 {
+    private static RandomHazardManager _instance;
+
+    public static RandomHazardManager instance{
+        get{
+            if(_instance == null)
+                _instance = FindObjectOfType<RandomHazardManager>();
+
+            return _instance;
+        }
+    }
+
     public enum HazardFrequency
     {
         ALL,
@@ -20,6 +31,11 @@ public class RandomHazardManager : MonoBehaviour
 
     public HazardFrequency m_hazardFrequency;
 
+    void Awake(){
+        if(instance != this)
+            Destroy(gameObject);
+        Initalize();
+    }
 
     [ContextMenu("Initalize")]
     public void Initalize()
@@ -153,7 +169,7 @@ public class RandomHazardManager : MonoBehaviour
         }
     }
 
-    private string MakeResultString(){
+    public string MakeResultString(){
         string result = "";
         
         var missedHazardsName = new List<string>();
