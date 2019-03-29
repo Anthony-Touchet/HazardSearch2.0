@@ -12,15 +12,19 @@ public class RandomHazardManager : MonoBehaviour
         AFEW,   //1/2
     }
 
+    private int m_activeHazardCount = 0;
+
     public int m_seed;
     public List<GameObject> m_hazardList;   //List of the hazards or the parents of the hazards.
     public bool m_parentIsGroup;            //Are the hazards children of GameObjects?
 
     public HazardFrequency m_hazardFrequency;
 
+
     [ContextMenu("Initalize")]
     public void Initalize()
     {
+        m_activeHazardCount = 0;
         switch(m_hazardFrequency){
             case HazardFrequency.ALL:
                 if(m_parentIsGroup)
@@ -58,6 +62,15 @@ public class RandomHazardManager : MonoBehaviour
 
                 break;
         }
+        var packet = new Mouledoux.Callback.Packet(new int[0], new bool[1], new float[1], new string[0]);
+        packet.floats[0] = m_activeHazardCount;
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("setmaxscore", packet);
+
+        packet.floats[0] = 0;
+        packet.bools[0] = true;
+        
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("setcurrentscore", packet);
     }
 
     public void SetFrequency(int frequency){
@@ -87,6 +100,7 @@ public class RandomHazardManager : MonoBehaviour
     private void LoopList(float frequency, int seed){
         foreach(GameObject go in m_hazardList){ //Turn Everything on
             go.SetActive(true);
+            m_activeHazardCount++;
         }
 
         //Number of objects that will be turned off
@@ -102,6 +116,7 @@ public class RandomHazardManager : MonoBehaviour
             {
                 m_hazardList[selection].SetActive(false);
                 deactivateNumber--;
+                m_activeHazardCount--;
             }
         }
     }
@@ -113,6 +128,7 @@ public class RandomHazardManager : MonoBehaviour
             foreach(Transform child in go.transform){
                 child.gameObject.SetActive(true);
                 numberOfChildren++;
+                m_activeHazardCount++;
             }
         }
 
@@ -132,6 +148,7 @@ public class RandomHazardManager : MonoBehaviour
             {
                 m_hazardList[group].transform.GetChild(child).gameObject.SetActive(false);
                 deactivateNumber--;
+                m_activeHazardCount--;
             }
         }
     }

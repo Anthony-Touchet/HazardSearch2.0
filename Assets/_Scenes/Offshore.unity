@@ -442,6 +442,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_offInteract:
@@ -460,7 +471,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &163223947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -882,7 +893,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675830665}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -893,9 +904,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 385379702}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -922,7 +944,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &255410085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1097,7 +1119,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 280773176}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1108,9 +1130,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1731077455}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1137,7 +1170,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &275242413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1405,7 +1438,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1603078875}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1416,9 +1449,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 856355639}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1445,7 +1489,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &314876918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3003,7 +3047,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 883474891}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3014,9 +3058,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 993228307}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3043,7 +3098,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &566471651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3141,7 +3196,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 734392192}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3152,9 +3207,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 446699413}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3181,7 +3247,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &580617912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3279,7 +3345,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 949258257}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3290,9 +3356,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1484335648}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3319,7 +3396,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &595143728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3417,7 +3494,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966935635}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3428,9 +3505,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1745936787}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3457,7 +3545,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &606019392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5068,7 +5156,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 441095894}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -5079,9 +5167,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 446723365}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5108,7 +5207,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &655913402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5283,7 +5382,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1663430420}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -5294,9 +5393,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 182937426}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5323,7 +5433,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &715808998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5729,7 +5839,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2096913240}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -5740,9 +5850,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2001216674}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5769,7 +5890,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &761644929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5867,7 +5988,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1918386613}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -5878,9 +5999,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2047952970}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5907,7 +6039,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &766516903
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6082,7 +6214,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1410006023}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -6093,9 +6225,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 228235365}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6122,7 +6265,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &778049312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6682,7 +6825,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1498680544}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -6693,9 +6836,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1406196825}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6722,7 +6876,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &877403694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7008,7 +7162,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1000758268}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -7019,9 +7173,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 348122844}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7048,7 +7213,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &892019368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7342,7 +7507,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1388404765}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -7353,9 +7518,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 170176741}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7382,7 +7558,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &967579792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8112,7 +8288,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 880328005}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -8123,9 +8299,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 497241616}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8152,7 +8339,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1032771511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8254,6 +8441,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OilRig.root
       objectReference: {fileID: 0}
+    - target: {fileID: 100518, guid: 14270135f5ba79745a41dcb2bede40e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100058, guid: 14270135f5ba79745a41dcb2bede40e7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -8273,10 +8464,6 @@ PrefabInstance:
     - target: {fileID: 100482, guid: 14270135f5ba79745a41dcb2bede40e7, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100518, guid: 14270135f5ba79745a41dcb2bede40e7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400278, guid: 14270135f5ba79745a41dcb2bede40e7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8596,7 +8783,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538453812}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -8607,9 +8794,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1895667599}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8636,7 +8834,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1057676794
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9141,7 +9339,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 745108316}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -9152,9 +9350,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1201790276}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9181,7 +9390,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1118770285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9373,7 +9582,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1223025359}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -9384,9 +9593,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1750398314}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9413,7 +9633,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1191720552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9742,7 +9962,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 541137785}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -9753,9 +9973,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1104467005}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9782,7 +10013,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1212584821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10265,7 +10496,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 833232265}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -10276,9 +10507,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 122683799}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10305,7 +10547,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1383815033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10557,7 +10799,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 805970552}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -10568,9 +10810,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1058191691}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10597,7 +10850,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1405770068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10849,7 +11102,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 758476577}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -10860,9 +11113,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2048940879}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10889,7 +11153,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1438774352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11637,7 +11901,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461767461}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -11648,9 +11912,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1323902194}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11677,7 +11952,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1518276025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11775,7 +12050,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865026103}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -11786,9 +12061,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2105603811}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11815,7 +12101,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1548016122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11994,7 +12280,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1397009945}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -12005,9 +12291,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1345170140}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12034,7 +12331,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1601764321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12628,7 +12925,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 380377343}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -12639,9 +12936,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1034849323}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12668,7 +12976,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1692174761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13129,7 +13437,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1745458874
 GameObject:
@@ -13215,7 +13523,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 368433299}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -13226,9 +13534,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1209679266}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13255,7 +13574,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1745458877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13960,6 +14279,49 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1835985750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1835985752}
+  - component: {fileID: 1835985751}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1835985751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835985750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd962befeaec4d042aa1544c7ccb7664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1835985752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835985750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1844058706
 GameObject:
   m_ObjectHideFlags: 0
@@ -14044,7 +14406,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 415357183}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -14055,9 +14417,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1212162029}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14084,7 +14457,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1844058709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14636,7 +15009,7 @@ MonoBehaviour:
   m_onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1638897615}
+      - m_Target: {fileID: 1730011069}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -14647,9 +15020,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 461326204}
+      - m_Target: {fileID: 1009981403}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 163223946}
+        m_MethodName: IncreaseScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14676,7 +15060,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scoreValue: 10
+  m_scoreValue: 1
 --- !u!65 &1911012304
 BoxCollider:
   m_ObjectHideFlags: 0
