@@ -28,6 +28,7 @@ public class ScoreManager : MonoBehaviour
 
     public float currentScore{get => m_currentScore;} 
     public float maxScore{get => m_maxScore;}
+    public float gradeResult{get => m_currentScore/m_maxScore;}
 
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions =
         new Mouledoux.Components.Mediator.Subscriptions();
@@ -36,6 +37,14 @@ public class ScoreManager : MonoBehaviour
     private Mouledoux.Callback.Callback incrementCurrent;
     private Mouledoux.Callback.Callback setMaxScore;
     private Mouledoux.Callback.Callback clearScores;
+
+    [SerializeField, Range(0f,1f)]
+    private float m_PassingGrade;
+
+    [SerializeField]
+    private UnityEngine.Events.UnityEvent onPass;
+    [SerializeField]
+    private UnityEngine.Events.UnityEvent onFail;
 
     public void Initalize(){
         setCurrent = SetCurrentScore;
@@ -47,6 +56,13 @@ public class ScoreManager : MonoBehaviour
         m_subscriptions.Subscribe("incrementcurrentscore", incrementCurrent);
         m_subscriptions.Subscribe("setmaxscore", setMaxScore);
         m_subscriptions.Subscribe("clearscores", clearScores);
+    }
+
+    public bool CheckPass(){
+        if(currentScore/maxScore >= m_PassingGrade)
+            return true;
+        else
+            return false;
     }
 
     private void SetMaxScore(float score){
@@ -76,5 +92,4 @@ public class ScoreManager : MonoBehaviour
     private void ClearScores(Mouledoux.Callback.Packet data){
        ClearBothScores();
     }
-    
 }

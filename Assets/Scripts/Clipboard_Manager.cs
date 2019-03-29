@@ -48,7 +48,7 @@ public class Clipboard_Manager : MonoBehaviour
     }
 
     private void AppendText(Text textField, string appendage){
-        textField.text += appendage + "\n";
+        textField.text += appendage;
     }
 
     private void SetText(Text textField, string message){
