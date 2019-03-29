@@ -25,6 +25,8 @@ public class InteractableObject : MonoBehaviour
     public UnityEngine.Events.UnityEvent m_onInteract;
     public UnityEngine.Events.UnityEvent m_offInteract;
 
+    public Mouledoux.Callback.Packet m_IOPacket;
+
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
 
     protected Mouledoux.Callback.Callback onHighlight;
@@ -32,7 +34,7 @@ public class InteractableObject : MonoBehaviour
     protected Mouledoux.Callback.Callback onInteract;
     protected Mouledoux.Callback.Callback offInteract;
 
-    private void Start()
+    protected void Start()
     {
         Initialize(gameObject);
     }

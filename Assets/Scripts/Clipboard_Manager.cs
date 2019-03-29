@@ -5,6 +5,33 @@ using UnityEngine.UI;
 
 public class Clipboard_Manager : MonoBehaviour
 {
+    public Text m_bigText;
+    public Text m_smallText;
+
+     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions =
+        new Mouledoux.Components.Mediator.Subscriptions();
+
+    private Mouledoux.Callback.Callback appendBigText;
+    private Mouledoux.Callback.Callback setBigText;
+    private Mouledoux.Callback.Callback appendSmallText;
+    private Mouledoux.Callback.Callback setSmallText;
+
+    void Awake(){
+        Initalize();
+    }
+
+    void Initalize(){
+        appendBigText = AppendBigText;
+        setBigText = SetBigText;
+        appendSmallText = AppendSmallText;
+        setSmallText = SetSmallText;
+
+        m_subscriptions.Subscribe("appendbigtext", appendBigText);
+        m_subscriptions.Subscribe("setbigtext", setBigText);
+        m_subscriptions.Subscribe("appendsmalltext", appendSmallText);
+        m_subscriptions.Subscribe("setsmalltext", setSmallText);
+    }
+
     public void ToggleOnOff(GameObject gameObject)
     {
         gameObject.SetActive(!gameObject.activeSelf);
@@ -20,7 +47,27 @@ public class Clipboard_Manager : MonoBehaviour
         button.interactable = !button.interactable;
     }
 
-    public void AppendText(Text textField, string appendage){
-        textField.text += appendage + "\n";
+    private void AppendText(Text textField, string appendage){
+        textField.text += appendage;
+    }
+
+    private void SetText(Text textField, string message){
+        textField.text = message;
+    }
+
+    private void SetBigText(Mouledoux.Callback.Packet packet){
+        SetText(m_bigText, packet.strings[0]);
+    }
+
+    private void AppendBigText(Mouledoux.Callback.Packet packet){
+        AppendText(m_bigText, packet.strings[0]);
+    }
+
+    private void SetSmallText(Mouledoux.Callback.Packet packet){
+        SetText(m_smallText, packet.strings[0]);
+    }
+
+    private void AppendSmallText(Mouledoux.Callback.Packet packet){
+        AppendText(m_smallText, packet.strings[0]);
     }
 }

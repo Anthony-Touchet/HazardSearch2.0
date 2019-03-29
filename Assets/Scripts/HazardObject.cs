@@ -6,10 +6,21 @@ public class HazardObject : InteractableObject
 {
     public float m_scoreValue;
     
+    public new void Start(){
+        offInteract += AppendName;
+        base.Start();
+    }
+
     public void IncreaseScore()
     {
         var packet = new Mouledoux.Callback.Packet();
         packet.floats = new float[]{m_scoreValue};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("incrementcurrentscore", packet);
+    }
+
+    private void AppendName(Mouledoux.Callback.Packet packet){
+        var data = new Mouledoux.Callback.Packet();
+        data.strings = new string[]{gameObject.name};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("appendbigtext", data);
     }
 }
