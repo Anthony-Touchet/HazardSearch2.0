@@ -4181,7 +4181,7 @@ PrefabInstance:
     - target: {fileID: 4152022143003341482, guid: da815f850997f8b4898d5126755e45e0,
         type: 3}
       propertyPath: m_Name
-      value: Crane Double Hazard
+      value: Toolbox on Crane Load
       objectReference: {fileID: 0}
     - target: {fileID: 4152022143003341483, guid: da815f850997f8b4898d5126755e45e0,
         type: 3}
@@ -4253,6 +4253,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 3.9234715
       objectReference: {fileID: 0}
+    - target: {fileID: 4152022143424303718, guid: da815f850997f8b4898d5126755e45e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6074500948279518578, guid: da815f850997f8b4898d5126755e45e0,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -4292,6 +4297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.8790007
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977537641621226656, guid: da815f850997f8b4898d5126755e45e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.927
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da815f850997f8b4898d5126755e45e0, type: 3}
