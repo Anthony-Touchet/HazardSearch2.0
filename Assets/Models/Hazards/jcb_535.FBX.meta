@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: 948980a504c7a1543951d854e583fa63
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: GearBackL
+    100002: GearBackR
+    100004: GearFrontL
+    100006: GearFrontR
+    100008: gidro1
+    100010: gidro2
+    100012: gidro3
+    100014: jcb535
+    100016: //RootNode
+    100018: Klb
+    100020: Klf
+    100022: Krb
+    100024: Krf
+    100026: roga
+    100028: shtok1
+    100030: shtok2
+    100032: shtok3
+    100034: tele1
+    100036: tele2
+    100038: tele3
+    400000: GearBackL
+    400002: GearBackR
+    400004: GearFrontL
+    400006: GearFrontR
+    400008: gidro1
+    400010: gidro2
+    400012: gidro3
+    400014: jcb535
+    400016: //RootNode
+    400018: Klb
+    400020: Klf
+    400022: Krb
+    400024: Krf
+    400026: roga
+    400028: shtok1
+    400030: shtok2
+    400032: shtok3
+    400034: tele1
+    400036: tele2
+    400038: tele3
+    2100000: 02 - Default
+    2100002: 01 - Default
+    2100004: 05 - Default
+    2300000: GearBackL
+    2300002: GearBackR
+    2300004: GearFrontL
+    2300006: GearFrontR
+    2300008: gidro1
+    2300010: gidro2
+    2300012: gidro3
+    2300014: jcb535
+    2300016: //RootNode
+    2300018: Klb
+    2300020: Klf
+    2300022: Krb
+    2300024: Krf
+    2300026: roga
+    2300028: shtok1
+    2300030: shtok2
+    2300032: shtok3
+    2300034: tele1
+    2300036: tele2
+    2300038: tele3
+    3300000: GearBackL
+    3300002: GearBackR
+    3300004: GearFrontL
+    3300006: GearFrontR
+    3300008: gidro1
+    3300010: gidro2
+    3300012: gidro3
+    3300014: jcb535
+    3300016: //RootNode
+    3300018: Klb
+    3300020: Klf
+    3300022: Krb
+    3300024: Krf
+    3300026: roga
+    3300028: shtok1
+    3300030: shtok2
+    3300032: shtok3
+    3300034: tele1
+    3300036: tele2
+    3300038: tele3
+    4300000: Cylinder01
+    4300002: jcb535
+    4300004: GearFrontL
+    4300006: Klf
+    4300008: GearFrontR
+    4300010: Krf
+    4300012: GearBackL
+    4300014: Klb
+    4300016: GearBackR
+    4300018: Krb
+    4300020: tele1
+    4300022: tele2
+    4300024: tele3
+    4300026: roga
+    4300028: shtok3
+    4300030: gidro3
+    4300032: shtok1
+    4300034: gidro1
+    4300036: gidro2
+    4300038: shtok2
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
