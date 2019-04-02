@@ -416,7 +416,122 @@ ModelImporter:
     13700032: sweater_jeans
     13700034: tshirt_jeans_A
     13700036: tshirt_jeans_B
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head Bill
+    second: {fileID: 2100000, guid: d17608fb8ec186d4ba8c22d5bf099415, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head Jim
+    second: {fileID: 2100000, guid: 2be15e2893bbab848ab4270f8e905c73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head John
+    second: {fileID: 2100000, guid: 0f49fc1e7bf6057449b55c3cd538616a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head Lee
+    second: {fileID: 2100000, guid: 8d3e4f977240bac4a92a023e8f1ad7a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jim_hair
+    second: {fileID: 2100000, guid: 011afdbd1ab8edc4a92ec31895ab5a33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lashes1
+    second: {fileID: 2100000, guid: 181aafc63c64fba46b0405698598dc0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin man dark
+    second: {fileID: 2100000, guid: 3e96b218bec6e204d9e821dd1efe314b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin man light
+    second: {fileID: 2100000, guid: 4fe94a74e8a6e324bb500a56e1f7395f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sweater_jeans
+    second: {fileID: 2100000, guid: d49bcd10f38b61642a4c8830d0208f05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Teeth
+    second: {fileID: 2100000, guid: b25a569724f184041a6af38058453cbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tshirt_jeans_A
+    second: {fileID: 2100000, guid: 573d8fb0be2cd52449255b8b0a626f00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tshirt_safety_jeans_B
+    second: {fileID: 2100000, guid: 2e4a9e1a73cd7c748a006ac05562783d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coat safety
+    second: {fileID: 2100000, guid: f7f834b1332132046859bc1c9bb2b886, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye surface
+    second: {fileID: 2100000, guid: 3a431d7820907014388498b0e1544571, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: foam
+    second: {fileID: 2100000, guid: 1c1990095f5343b40a3b847fb010900a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gloves
+    second: {fileID: 2100000, guid: 9764f3113da25bb4d86b1686c40810b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: overall_safety
+    second: {fileID: 2100000, guid: c9147f3f06ad49f41b34bdd8e0c74ada, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__iris
+    second: {fileID: 2100000, guid: 2ccbbf5036ed5b644b9a443bad376c99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic black
+    second: {fileID: 2100000, guid: 3cecf70600ae326488f4159c6da34ec9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic yellow.1
+    second: {fileID: 2100000, guid: 8604a0c1e51563e4dabfe9bd536e23e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: safety boots
+    second: {fileID: 2100000, guid: 14abac2915f78684bb99d62119c80972, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: safety glasses
+    second: {fileID: 2100000, guid: 3d59cfe37c8fe0447a0895355cb5c5f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shoes safety
+    second: {fileID: 2100000, guid: 3b1591e8ec642974e9414699976037b4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
