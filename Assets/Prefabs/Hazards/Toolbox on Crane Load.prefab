@@ -3755,7 +3755,7 @@ PrefabInstance:
     - target: {fileID: 1134401250712707704, guid: feff9b7b265493b4385366fb2942d51b,
         type: 3}
       propertyPath: m_Name
-      value: Crane Double Hazard
+      value: Toolbox on Crane Load
       objectReference: {fileID: 0}
     - target: {fileID: 1134401250712707707, guid: feff9b7b265493b4385366fb2942d51b,
         type: 3}
