@@ -6847,6 +6847,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Overloaded Electrical Sockets
       objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707707, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.23971558
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707707, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.72822714
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707707, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5635875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707707, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.1580827
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707707, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.28953433
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707707, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.4376763
+      objectReference: {fileID: 0}
     - target: {fileID: 1134401250712707705, guid: feff9b7b265493b4385366fb2942d51b,
         type: 3}
       propertyPath: m_LocalPosition.x
