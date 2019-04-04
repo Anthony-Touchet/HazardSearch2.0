@@ -228,4 +228,15 @@ public class RandomHazardManager : MonoBehaviour
 
         return result;
     }
+
+    public List<GameObject> FindAllHazards(){
+        var hazards = new List<GameObject>();
+        
+        var hazScripts = GameObject.FindObjectsOfType<HazardObject>();
+        for(int i = 0; i < hazScripts.Length; i++){
+            hazards.Add(hazScripts[i].gameObject);
+        }
+        
+        return hazards;
+    }
 }
