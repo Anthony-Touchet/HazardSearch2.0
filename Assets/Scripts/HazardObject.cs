@@ -19,6 +19,12 @@ public class HazardObject : InteractableObject
         Mouledoux.Components.Mediator.instance.NotifySubscribers("incrementcurrentscore", packet);
     }
 
+    public void NotActive(){
+        var packet = new Mouledoux.Callback.Packet();
+        packet.ints = new int[]{gameObject.GetInstanceID()};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("nolongeractive", packet);
+    }
+
     private void AppendName(Mouledoux.Callback.Packet packet){
         var data = new Mouledoux.Callback.Packet();
         data.strings = new string[]{gameObject.name};
