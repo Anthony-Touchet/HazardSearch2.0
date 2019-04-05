@@ -97,7 +97,10 @@ public class RandomHazardManager : MonoBehaviour
         packet.bools[0] = true;
         
         Mouledoux.Components.Mediator.instance.NotifySubscribers("setcurrentscore", packet);
-    
+        var pack = new Mouledoux.Callback.Packet();
+        pack.ints = new int[]{0};
+        
+        SetLocalHazards(pack);
     }
 
     private void SetLocalHazards(Mouledoux.Callback.Packet packet){
