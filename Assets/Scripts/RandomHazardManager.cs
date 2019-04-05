@@ -31,6 +31,16 @@ public class RandomHazardManager : MonoBehaviour
 
     public HazardFrequency m_hazardFrequency;
 
+    private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = 
+    new Mouledoux.Components.Mediator.Subscriptions();
+
+    Mouledoux.Callback.Callback nextRailHandeler;
+
+    void Awake(){
+        nextRailHandeler = SetLocalHazards;
+        m_subscriptions.Subscribe("teleporting", nextRailHandeler);
+    }
+
     void Start(){
         if(instance != this)
             Destroy(gameObject);
@@ -87,6 +97,26 @@ public class RandomHazardManager : MonoBehaviour
         packet.bools[0] = true;
         
         Mouledoux.Components.Mediator.instance.NotifySubscribers("setcurrentscore", packet);
+        var pack = new Mouledoux.Callback.Packet();
+        pack.ints = new int[]{0};
+        
+        SetLocalHazards(pack);
+    }
+
+    private void SetLocalHazards(Mouledoux.Callback.Packet packet){
+        foreach(GameObject go in m_hazardList){
+            if(m_hazardList[packet.ints[0]] == go)
+            {
+                foreach(Transform trans in go.transform){
+                trans.gameObject.SetActive(true);
+                }
+                continue;
+            }
+            
+            foreach(Transform trans in go.transform){
+                trans.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void SetFrequency(int frequency){
