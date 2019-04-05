@@ -31,14 +31,18 @@ public class RandomHazardManager : MonoBehaviour
 
     public HazardFrequency m_hazardFrequency;
 
+    private List<GameObject> m_activeObjects;
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = 
     new Mouledoux.Components.Mediator.Subscriptions();
 
     Mouledoux.Callback.Callback nextRailHandeler;
+    Mouledoux.Callback.Callback removeObjectFromList;
 
     void Awake(){
+        removeObjectFromList = RemoveGameObject;
         nextRailHandeler = SetLocalHazards;
         m_subscriptions.Subscribe("teleporting", nextRailHandeler);
+        m_subscriptions.Subscribe("nolongeractive", removeObjectFromList);
     }
 
     void Start(){
@@ -165,6 +169,11 @@ public class RandomHazardManager : MonoBehaviour
                 m_activeHazardCount--;
             }
         }
+
+        foreach(GameObject go in m_hazardList){ //Turn Everything on
+            if(go.activeSelf == true)
+                m_activeObjects.Add(go);
+        }
     }
 
     private void LoopChildrenOfList(float frequency, int seed){
@@ -197,6 +206,13 @@ public class RandomHazardManager : MonoBehaviour
                 m_activeHazardCount--;
             }
         }
+
+        foreach(GameObject go in m_hazardList){ //Turn Everything on
+            foreach(Transform child in go.transform){
+                if(child.gameObject.activeSelf == true)
+                    m_activeObjects.Add(child.gameObject);
+            }
+        }
     }
 
     public string MakeResultString(){
@@ -220,18 +236,10 @@ public class RandomHazardManager : MonoBehaviour
 
         allHazardList = FindAllHazards();
 
-        //Clear out turned off hazards.
-        var activeHazards = new List<GameObject>();
-        foreach(GameObject go in allHazardList){
-            if(go.activeSelf)
-                activeHazards.Add(go);
-        }
-
         //See if they were found
-        foreach(GameObject go in activeHazards)
+        foreach(GameObject go in m_activeObjects)
         {
-            if(!go.transform.Find("Good").gameObject.activeSelf)
-                missedHazardsName.Add(go.name);
+            missedHazardsName.Add(go.name);
         }
 
         //String header
@@ -276,5 +284,14 @@ public class RandomHazardManager : MonoBehaviour
         }
         
         return hazards;
+    }
+
+    private void RemoveGameObject(Mouledoux.Callback.Packet pack){
+        var newList = m_activeObjects;
+
+        foreach(GameObject go in newList){
+            if(go.GetInstanceID() == pack.ints[0])
+                m_activeObjects.Remove(go);
+        }
     }
 }
