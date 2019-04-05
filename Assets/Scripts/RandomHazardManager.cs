@@ -31,7 +31,7 @@ public class RandomHazardManager : MonoBehaviour
 
     public HazardFrequency m_hazardFrequency;
 
-    private List<GameObject> m_activeObjects;
+    private List<GameObject> m_activeObjects = new List<GameObject>();
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = 
     new Mouledoux.Components.Mediator.Subscriptions();
 
