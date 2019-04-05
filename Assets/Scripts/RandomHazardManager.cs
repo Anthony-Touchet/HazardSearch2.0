@@ -231,6 +231,12 @@ public class RandomHazardManager : MonoBehaviour
         return result;
     }
 
+    public string GiveScoreOnly(){
+        return ScoreManager.instance.currentScore + " / " + 
+            ScoreManager.instance.maxScore + " (" + ScoreManager.instance.gradeResult * 100 + 
+            "%)";
+    }
+
     public List<GameObject> FindAllHazards(){
         var hazards = new List<GameObject>();
         
