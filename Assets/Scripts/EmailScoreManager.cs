@@ -22,7 +22,7 @@ public class EmailScoreManager : MonoBehaviour
         
     }
 
-     void SendMail(string aFrom, string aTo, string aSubject, string aBody, string aPassword)
+    void SendMail(string aFrom, string aTo, string aSubject, string aBody, string aPassword)
     {
         if (!aTo.Contains("@") && !aTo.ToLower().Contains(".com"))
             return;
