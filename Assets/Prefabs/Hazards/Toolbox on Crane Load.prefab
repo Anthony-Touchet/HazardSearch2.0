@@ -3764,6 +3764,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toolbox on Crane Load
       objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707706, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_scoreValue
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1134401250712707707, guid: feff9b7b265493b4385366fb2942d51b,
         type: 3}
       propertyPath: m_Size.x
@@ -3991,6 +3996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411146929378469734, guid: 97f9ac05efc9a6843a8eb3bde444cf41,
+        type: 3}
+      propertyPath: m_scoreValue
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1411146928923936680, guid: 97f9ac05efc9a6843a8eb3bde444cf41,
         type: 3}
