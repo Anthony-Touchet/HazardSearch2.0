@@ -31,7 +31,7 @@ public class RandomHazardManager : MonoBehaviour
 
     public HazardFrequency m_hazardFrequency;
 
-    void Awake(){
+    void Start(){
         if(instance != this)
             Destroy(gameObject);
         Initalize();
