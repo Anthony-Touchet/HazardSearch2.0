@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
         if(instance != this)
             Destroy(gameObject);
 
-        Initalize();
+        Initialize();
     }
 
     private float m_currentScore;
@@ -46,7 +46,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private UnityEngine.Events.UnityEvent onFail;
 
-    public void Initalize(){
+    public void Initialize(){
         setCurrent = SetCurrentScore;
         incrementCurrent = SetCurrentScore;
         setMaxScore = SetMaxScore;

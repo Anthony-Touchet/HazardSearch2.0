@@ -9,17 +9,9 @@ using System.Security.Cryptography.X509Certificates;
 
 public class EmailScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void SendMailToStudent()
     {
-        //SendMail();
-        print("Done");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SendMail("eric@tantrumlab.com", PlayerPrefs.GetString("studentEmail"), "Hazard Awareness Score", RandomHazardManager.instance.MakeResultString(), "Tantrum_668533689");
     }
 
     void SendMail(string aFrom, string aTo, string aSubject, string aBody, string aPassword)
