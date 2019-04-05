@@ -160,9 +160,11 @@ public class ForceTeleport : MonoBehaviour
     public void NextRailPoint()
     {
         currentPoint++;
-        if(currentPoint >= railPoints.Count)
+        if(currentPoint >= railPoints.Count - 1)
         {
+            currentPoint = railPoints.Count - 1;
             Mouledoux.Components.Mediator.instance.NotifySubscribers("setreview");
+            StartTeleport(railPoints[currentPoint]);
             return;
         }
 
