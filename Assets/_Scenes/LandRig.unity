@@ -122,7 +122,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 34167846}
-  - component: {fileID: 34167845}
   m_Layer: 0
   m_Name: Cliboard Util
   m_TagString: Untagged
@@ -130,21 +129,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &34167845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34167844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7256baddd24796c45a431bf8a01266be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_bigText: {fileID: 1117661377}
-  m_smallText: {fileID: 1117661376}
-  m_endScreen: {fileID: 1806295912}
 --- !u!4 &34167846
 Transform:
   m_ObjectHideFlags: 0
@@ -1832,6 +1816,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &618609152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 618609154}
+  - component: {fileID: 618609153}
+  m_Layer: 0
+  m_Name: Score Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &618609153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618609152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd962befeaec4d042aa1544c7ccb7664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PassingGrade: 0
+  onPass:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onFail:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!4 &618609154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618609152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.06, y: 36.107, z: 3.036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647952393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,7 +2457,7 @@ Transform:
   - {fileID: 1806295911}
   - {fileID: 1706778251}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825762506
 GameObject:
@@ -3895,30 +3933,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1117661376 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6409703929711439632, guid: 72653085a6b827f48b10b434c7972f1c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1117661372}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1117661377 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6409703930318688408, guid: 72653085a6b827f48b10b434c7972f1c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1117661372}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1149593831
@@ -8237,18 +8251,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1806295910}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1806295912 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1593076578699888193, guid: 57102bd2f91800e41894797753364434,
-    type: 3}
-  m_PrefabInstance: {fileID: 1806295910}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1837801926
 PrefabInstance:
   m_ObjectHideFlags: 0
