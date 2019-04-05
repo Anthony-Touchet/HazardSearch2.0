@@ -214,7 +214,7 @@ public class RandomHazardManager : MonoBehaviour
 
         //Score
         result += "You found " + ScoreManager.instance.currentScore + " of " + 
-            ScoreManager.instance.maxScore + " (" + ScoreManager.instance.gradeResult * 100 + 
+            ScoreManager.instance.maxScore + " (" + (ScoreManager.instance.gradeResult * 100f).ToString("") + 
             "%)\n\n";
         
         //Footer Message
