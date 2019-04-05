@@ -176,17 +176,19 @@ public class RandomHazardManager : MonoBehaviour
         var allHazardList = new List<GameObject>();
         
         //Get all the hazards
-        if(m_parentIsGroup)
-        {
-            foreach(GameObject go in m_hazardList){ //Turn Everything on
-                foreach(Transform child in go.transform){
-                    allHazardList.Add(child.gameObject);
-                }
-            }
-        }
+        // if(m_parentIsGroup)
+        // {
+        //     foreach(GameObject go in m_hazardList){ //Turn Everything on
+        //         foreach(Transform child in go.transform){
+        //             allHazardList.Add(child.gameObject);
+        //         }
+        //     }
+        // }
 
-        else
-            allHazardList = m_hazardList;
+        // else
+        //     allHazardList = m_hazardList;
+
+        allHazardList = FindAllHazards();
 
         //Clear out turned off hazards.
         var activeHazards = new List<GameObject>();
