@@ -27,7 +27,7 @@ public class HazardObject : InteractableObject
 
     private void AppendName(Mouledoux.Callback.Packet packet){
         var data = new Mouledoux.Callback.Packet();
-        data.strings = new string[]{gameObject.name};
+        data.strings = new string[]{gameObject.name + ", "};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("appendbigtext", data);
     }
 }

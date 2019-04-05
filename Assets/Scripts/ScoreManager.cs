@@ -40,6 +40,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField, Range(0f,1f)]
     private float m_PassingGrade;
+    public float passingGrade => m_PassingGrade;
 
     [SerializeField]
     private UnityEngine.Events.UnityEvent onPass;

@@ -243,20 +243,18 @@ public class RandomHazardManager : MonoBehaviour
         }
 
         //String header
-        if(ScoreManager.instance.gradeResult >= 1)
-            result += "Great job!\n\n";
-        else if(ScoreManager.instance.gradeResult >= .75 && ScoreManager.instance.gradeResult < 1)
+        if(ScoreManager.instance.gradeResult >= ScoreManager.instance.passingGrade)
             result += "Good job!\n\n";
         else
             result += "Could use improvement.\n\n";
 
         //Score
         result += "You found " + ScoreManager.instance.currentScore + " of " + 
-            ScoreManager.instance.maxScore + " (" + (ScoreManager.instance.gradeResult * 100f).ToString("") + 
+            ScoreManager.instance.maxScore + " (" + (int)(ScoreManager.instance.gradeResult * 100f) + 
             "%)\n\n";
         
         //Footer Message
-        if(ScoreManager.instance.gradeResult >= 1)
+        if(ScoreManager.instance.gradeResult >= 1f)
             result += "You missed none.";
         else{
             result += "Here are some you missed:\n";
@@ -271,7 +269,7 @@ public class RandomHazardManager : MonoBehaviour
 
     public string GiveScoreOnly(){
         return ScoreManager.instance.currentScore + " / " + 
-            ScoreManager.instance.maxScore + " (" + ScoreManager.instance.gradeResult * 100 + 
+            ScoreManager.instance.maxScore + " (" + (int)(ScoreManager.instance.gradeResult * 100) + 
             "%)";
     }
 
