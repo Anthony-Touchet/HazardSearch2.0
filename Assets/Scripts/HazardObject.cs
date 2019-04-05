@@ -15,6 +15,7 @@ public class HazardObject : InteractableObject
     {
         var packet = new Mouledoux.Callback.Packet();
         packet.floats = new float[]{m_scoreValue};
+        packet.bools = new bool[]{false};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("incrementcurrentscore", packet);
     }
 
