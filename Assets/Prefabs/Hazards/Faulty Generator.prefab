@@ -4824,6 +4824,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScratchFX_Game_Ready_Generator_FBX_2013 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: f510bee5209c2974791016ce8b1a5c18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: f510bee5209c2974791016ce8b1a5c18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: f510bee5209c2974791016ce8b1a5c18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 3.9464648e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: f510bee5209c2974791016ce8b1a5c18, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.007423466
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: f510bee5209c2974791016ce8b1a5c18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1.4033071e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: f510bee5209c2974791016ce8b1a5c18, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.99997246
+      objectReference: {fileID: 0}
+    - target: {fileID: 400094, guid: f510bee5209c2974791016ce8b1a5c18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.851
+      objectReference: {fileID: 0}
     - target: {fileID: 400120, guid: f510bee5209c2974791016ce8b1a5c18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
