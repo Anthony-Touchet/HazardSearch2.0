@@ -7,6 +7,7 @@ public class Clipboard_Manager : MonoBehaviour
 {
     public Text m_bigText;
     public Text m_smallText;
+    public Text m_endScreen;
 
      private Mouledoux.Components.Mediator.Subscriptions m_subscriptions =
         new Mouledoux.Components.Mediator.Subscriptions();
@@ -77,5 +78,6 @@ public class Clipboard_Manager : MonoBehaviour
 
     private void PrintReview(Mouledoux.Callback.Packet packet){
         SetText(m_bigText, RandomHazardManager.instance.MakeResultString());
+        SetText(m_endScreen, RandomHazardManager.instance.MakeResultString());
     }
 }
