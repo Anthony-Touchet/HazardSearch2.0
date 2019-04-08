@@ -13,7 +13,7 @@ public class EmailScoreManager : MonoBehaviour
     {
         SendMail(PlayerPrefs.GetString("teacherEmail"), PlayerPrefs.GetString("studentEmail"),
         "Hazard Awareness Score", RandomHazardManager.instance.MakeResultString(),
-        PlayerPrefs.GetString("teachePassword"));
+        PlayerPrefs.GetString("teacherPassword"));
     }
 
     void SendMail(string aFrom, string aTo, string aSubject, string aBody, string aPassword)
