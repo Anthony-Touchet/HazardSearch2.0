@@ -293,6 +293,8 @@ public class RandomHazardManager : MonoBehaviour
         }
     }
 
+
+
     public string GetMissingHazards(ref List<GameObject> hazards)
     {
         string returnString = "";
