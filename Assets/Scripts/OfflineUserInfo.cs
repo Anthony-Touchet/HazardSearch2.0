@@ -86,7 +86,7 @@ public class OfflineUserInfo : MonoBehaviour
         info += RandomHazardManager.instance.m_hazardFrequency.ToString() + ", ";
         info += ScoreManager.instance.GetCurrentScore() + ", ";
         info += ScoreManager.instance.gradeResult.ToString("0") + ", ";
-        info += RandomHazardManager.
+        //info += RandomHazardManager.
 
         file.WriteLine(info);
         file.Close();
