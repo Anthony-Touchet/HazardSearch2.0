@@ -304,4 +304,14 @@ public class RandomHazardManager : MonoBehaviour
 
         return returnString;
     }
+
+    public string[] ReturnMissingHazards(){
+        var missedHazardsName = new string[m_activeObjects.Count];
+
+        for(int i = 0; i < m_activeObjects.Count; i++)
+        {
+            missedHazardsName[i] = m_activeObjects[i].name;
+        }
+        return missedHazardsName;
+    }
 }
