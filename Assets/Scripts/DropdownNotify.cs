@@ -16,4 +16,9 @@ public class DropdownNotify : MonoBehaviour
     {
         Mouledoux.Components.Mediator.instance.NotifySubscribers(_dropdown.captionText.text);
     }
+
+    public void SetPlayerPref(string playerPref)
+    {
+        PlayerPrefs.SetString(playerPref, _dropdown.captionText.text);
+    }
 }
