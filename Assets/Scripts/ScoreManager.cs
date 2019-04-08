@@ -66,6 +66,11 @@ public class ScoreManager : MonoBehaviour
             return false;
     }
 
+    public string GetCurrentScore()
+    {
+        return currentScore.ToString() + "/" + maxScore.ToString();
+    }
+
     private void SetMaxScore(float score){
         m_maxScore = score;
     }

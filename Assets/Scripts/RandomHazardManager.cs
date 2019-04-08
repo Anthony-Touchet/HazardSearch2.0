@@ -292,4 +292,14 @@ public class RandomHazardManager : MonoBehaviour
                 m_activeObjects.Remove(go);
         }
     }
+
+    public string GetMissingHazards(ref List<GameObject> hazards)
+    {
+        string returnString = "";
+
+        foreach(GameObject go in hazards)
+            returnString += $"[{go.name}] ";
+
+        return returnString;
+    }
 }
