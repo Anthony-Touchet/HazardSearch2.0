@@ -11,9 +11,9 @@ public class EmailScoreManager : MonoBehaviour
 {
     public void SendMailToStudent()
     {
-        SendMail("NoReply@TantrumLab.com", PlayerPrefs.GetString("studentEmail"),
+        SendMail("no-reply@tantrumlab.com", PlayerPrefs.GetString("studentEmail"),
         "Hazard Awareness Score", RandomHazardManager.instance.MakeResultString(),
-        "12345678901234567890qazwsxedcrfv");
+        "1jd7Y^%rg)j6%#209");
     }
 
     void SendMail(string aFrom, string aTo, string aSubject, string aBody, string aPassword)
