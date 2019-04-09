@@ -184,6 +184,11 @@ public class RandomHazardManager : MonoBehaviour
                 child.gameObject.SetActive(true);
                 numberOfChildren++;
                 m_activeHazardCount++;
+                foreach(Transform greatChild in child){ //Bad, Highlight, Good
+                        if(greatChild.GetComponentInChildren<HazardObject>() != null){
+                            m_activeHazardCount++;
+                        }
+                    }
             }
         }
 
@@ -204,13 +209,26 @@ public class RandomHazardManager : MonoBehaviour
                 m_hazardList[group].transform.GetChild(child).gameObject.SetActive(false);
                 deactivateNumber--;
                 m_activeHazardCount--;
+                foreach(Transform greatChild in m_hazardList[group].transform.GetChild(child)){ //Bad, Highlight, Good
+                        if(greatChild.GetComponentInChildren<HazardObject>() != null){
+                            m_activeHazardCount--;
+                        }
+                    }
             }
         }
-
-        foreach(GameObject go in m_hazardList){ //Turn Everything on
-            foreach(Transform child in go.transform){
-                if(child.gameObject.activeSelf == true)
+        
+        //Turn Everything on
+        foreach(GameObject go in m_hazardList){             //points
+            foreach(Transform child in go.transform){       //Hazards
+                if(child.gameObject.activeSelf == true){
                     m_activeObjects.Add(child.gameObject);
+                    foreach(Transform greatChild in child){ //Bad, Highlight, Good
+                        if(greatChild.GetComponentInChildren<HazardObject>() != null){
+                            var obj = greatChild.GetComponentInChildren<HazardObject>().gameObject;
+                            m_activeObjects.Add(obj);
+                        }
+                    }
+                }  
             }
         }
     }
