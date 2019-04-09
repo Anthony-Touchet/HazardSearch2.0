@@ -563,7 +563,7 @@ ModelImporter:
       name: shoes safety
     second: {fileID: 2100000, guid: ba890ab47d6103441bee2b3564369e4d, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
