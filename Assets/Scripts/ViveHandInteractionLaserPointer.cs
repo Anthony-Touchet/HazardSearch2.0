@@ -12,6 +12,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     private LineRenderer m_lineRenderer;
     private Vector3 m_endLinePos;
 
+    private float m_timeOut;
+
     static bool hasTriggered = false;
 
     private bool m_controllerConnected
@@ -54,15 +56,21 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         {
             if (CheckLongInput())   // We are holding down the trigger
             {
+                m_timeOut+= Time.deltaTime;
                 CheckObjectHit();
             }
 
             else if (CheckOffInput() && m_targetObject != null) // We have let go of the trigger, AND have a target object
             {
-                if (CheckForInteractableObject(m_targetObject) != null)
+                if (CheckForInteractableObject(m_targetObject) != null && m_timeOut < 8f)
                 {
                     OnObjectInteract();
                 }
+            }
+
+            else
+            {
+                m_timeOut = 0f;
             }
         }
 
@@ -76,7 +84,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         if (Physics.Raycast(m_hand.transform.position, m_hand.transform.forward, out m_raycast))
         {
-            if (m_targetObject != m_raycast.transform.gameObject && !m_isHoldingSomething)
+            if (m_targetObject != m_raycast.transform.gameObject && !m_isHoldingSomething && m_timeOut < 4f)
             {
                 if (m_targetObject != null)
                 {
