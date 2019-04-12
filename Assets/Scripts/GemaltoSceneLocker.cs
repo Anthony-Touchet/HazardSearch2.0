@@ -7,8 +7,9 @@ using Aladdin.HASP;
 
 public class GemaltoSceneLocker : MonoBehaviour
 {
+    public bool waitForKeyPass;
     
-    public float keyCheckInterval = 60f;
+    public UnityEngine.Events.UnityEvent onKeyCheckPass;
     public UnityEngine.Events.UnityEvent onKeyCheckFail;
 
 
@@ -28,22 +29,30 @@ public class GemaltoSceneLocker : MonoBehaviour
         "jk+nAxJFBA3RBrVztQGfO5Y+ZwVxb2XxgJFsgpm5Vd/5big7owqNIdRTY25sZave6oqqm9475QeRsSvX" +
         "3sY3KQL+YFo8nTMjc5UENg==";
 
-        
-    private void Start()
+
+    private IEnumerator Start()
     {
-        if(KeyIsConnected())
-        {
-            print("Hello World!");
-            print(Hasp.Fingerprint);
-        }
-        else
+        if(!KeyIsConnected())
         {
             string path = UnityEngine.Application.dataPath + "/_UserInformation/BinaryData/key.ezm";
             if (!System.IO.File.Exists(path))
             {
                 onKeyCheckFail.Invoke();
             }
+
+            if(waitForKeyPass)
+            {
+                while(!KeyIsConnected())
+                {
+                    yield return new WaitForSeconds(4f);
+                }
+            }
+
+            else yield break;
         }
+
+        onKeyCheckPass.Invoke();
+        yield return null;
     }
     
     private bool KeyIsConnected()
