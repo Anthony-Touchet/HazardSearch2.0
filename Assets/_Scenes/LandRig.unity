@@ -956,10 +956,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mud Cleaner Leak
       objectReference: {fileID: 0}
+    - target: {fileID: 8256986932049874865, guid: 396f485fe0696cd48b9d79fa1be3db2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.051
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
@@ -969,7 +974,7 @@ PrefabInstance:
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.541
+      value: 5.88
       objectReference: {fileID: 0}
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
@@ -979,7 +984,7 @@ PrefabInstance:
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
@@ -989,7 +994,7 @@ PrefabInstance:
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
@@ -1004,7 +1009,7 @@ PrefabInstance:
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8256986932049874864, guid: 396f485fe0696cd48b9d79fa1be3db2a,
         type: 3}
