@@ -9,14 +9,26 @@ using System.Security.Cryptography.X509Certificates;
 
 public class EmailScoreManager : MonoBehaviour
 {
-    public void SendMailToStudent()
+    public static string teacherMasterScoreEmail = "";
+
+    public static void SendTeacherMasterScoreEmail()
     {
-        SendMail("no-reply@tantrumlab.com", PlayerPrefs.GetString("studentEmail"),
-        "Hazard Awareness Score", RandomHazardManager.instance.MakeResultString(),
+        SendMail("no-reply@tantrumlab.com", PlayerPrefs.GetString("teacherEmail"),
+        "Hazard Awareness Scores", teacherMasterScoreEmail,
         "1jd7Y^%rg)j6%#209");
     }
 
-    void SendMail(string aFrom, string aTo, string aSubject, string aBody, string aPassword)
+    public void SendMailToStudent()
+    {
+        string score = RandomHazardManager.instance.MakeResultString();
+        teacherMasterScoreEmail += PlayerPrefs.GetString("studentEmail") + ": " + score + "\n\n";
+
+        SendMail("no-reply@tantrumlab.com", PlayerPrefs.GetString("studentEmail"),
+        "Hazard Awareness Score", score,
+        "1jd7Y^%rg)j6%#209");
+    }
+
+    static void SendMail(string aFrom, string aTo, string aSubject, string aBody, string aPassword)
     {
         if (!aTo.Contains("@") && !aTo.ToLower().Contains(".com"))
             return;
