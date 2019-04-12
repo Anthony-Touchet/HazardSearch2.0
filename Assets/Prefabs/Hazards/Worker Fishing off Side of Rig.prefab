@@ -9607,6 +9607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2497346632250716767}
   - component: {fileID: 3570434896799549757}
+  - component: {fileID: 2485129662223649458}
   m_Layer: 0
   m_Name: CraneCharacter_animationsTEST (1)
   m_TagString: Untagged
@@ -9653,6 +9654,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2485129662223649458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720054166055934362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1814c1f1634244ba8a83a1414520a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 237007657170020131}
+  myAnimator: {fileID: 3570434896799549757}
 --- !u!1 &1723482961820364543
 GameObject:
   m_ObjectHideFlags: 0
@@ -23957,6 +23972,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.x
       value: 0.15610838
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707706, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_onHighnight.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707706, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_onHighnight.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707706, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_onHighnight.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707706, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_onHighnight.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707706, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_onHighnight.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2485129662223649458}
+    - target: {fileID: 1134401250712707706, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_onHighnight.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetAnimationSync
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134401250712707706, guid: feff9b7b265493b4385366fb2942d51b,
+        type: 3}
+      propertyPath: m_onHighnight.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1134401249326412945, guid: feff9b7b265493b4385366fb2942d51b, type: 3}
