@@ -6419,7 +6419,6 @@ MonoBehaviour:
   - {fileID: 2061213573}
   - {fileID: 1146495997}
   - {fileID: 1611967707}
-  - {fileID: 0}
   - {fileID: 1892226657}
   m_parentIsGroup: 1
   m_hazardFrequency: 0
