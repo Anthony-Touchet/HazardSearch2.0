@@ -78,7 +78,7 @@ public class UIUtils : MonoBehaviour
 
     public void SetSceneLoadMessage(string message)
     {
-        SceneLoader._instance.SetLoadMessage(message);
+        SceneLoader._instance.SetSoloMessage(message);
         print(message);
     }
 
