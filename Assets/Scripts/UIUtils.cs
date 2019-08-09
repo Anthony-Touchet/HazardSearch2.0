@@ -50,7 +50,7 @@ public class UIUtils : MonoBehaviour
         GoToSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
-    public void GoToSceneAsync(Dropdown dropdown)
+    public void GoToSceneAsync(TMPro.TMP_Dropdown dropdown)
     {
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(dropdown.captionText.text);
     }

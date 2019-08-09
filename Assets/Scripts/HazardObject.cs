@@ -30,4 +30,23 @@ public class HazardObject : InteractableObject
         data.strings = new string[]{gameObject.name + ", "};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("appendbigtext", data);
     }
+
+    [ContextMenu("Off Interact")]
+    private void EditorOffInteract(){
+        offInteract.Invoke(new Mouledoux.Callback.Packet());
+    }
+
+    [ContextMenu("On Highlight")]
+    private void EditorOnHighlight(){
+        onHighlight.Invoke(new Mouledoux.Callback.Packet());
+    }
+
+    [ContextMenu("Off Highlight")]
+    private void EditorOffHighlight(){
+        offHighlight.Invoke(new Mouledoux.Callback.Packet());
+    }
+    
+    private void OnDestroy() {
+        ClearSubscriptions();
+    }
 }

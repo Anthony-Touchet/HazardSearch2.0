@@ -3,6 +3,7 @@
 [RequireComponent(typeof(OVRControllerHelper), typeof(LineRenderer))]
 public class ViveHandInteractionLaserPointer : MonoBehaviour
 {
+    public Material m_blipMaterial;
     private GameObject m_targetObject;
     private bool m_isHoldingSomething = false;
 
@@ -97,8 +98,6 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
                 
                 Mouledoux.Components.Mediator.instance.NotifySubscribers("onhighlight");
 
-                //SetBlip(m_raycast.point, (m_raycast.point - transform.position).magnitude);
-
                 Mouledoux.Components.Mediator.instance.NotifySubscribers
                     (m_targetObject.GetInstanceID().ToString() + "->onhighlight");
             }
@@ -136,7 +135,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         //m_hand.controller.TriggerHapticPulse();
         //return (m_hand.grabPinchAction.stateDown);
-        return OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger);
+        return OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
     }
 
 
@@ -145,7 +144,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         //m_hand.controller.TriggerHapticPulse();
         //eturn (m_hand.GetBestGrabbingType() == Valve.VR.InteractionSystem.GrabTypes.Pinch);
-        return OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger);
+        return OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
     }
 
 
@@ -154,7 +153,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         //m_hand.controller.TriggerHapticPulse();
         //return (m_hand.grabPinchAction.stateUp);
-        return OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger);
+        return OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger);
     }
 
 
@@ -208,7 +207,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         m_lineRenderer.SetPositions( new Vector3[] {m_remote.transform.position, m_remote.transform.position + m_remote.transform.forward});
         
         if(Vector3.Distance(m_raycast.point, transform.position) >= 25){
-            SetBlip(m_endLinePos, 0);
+            RestBlip();
         }
 
         else{
@@ -297,12 +296,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     private void RestBlip(){
         m_blip.localScale = new Vector3(0, 0, 0);
         m_blip.GetComponent<Collider>().enabled = false;
-        m_blip.GetComponent<Renderer>().material = new Material(Shader.Find("Unlit/Color"));
-        m_blip.GetComponent<Renderer>().material.color = new Color(0, 0.8f, 0.05f);
+        m_blip.GetComponent<Renderer>().material = m_blipMaterial;
     }
 
     private void SetBlip(Vector3 pos, float scale){
         m_blip.position = pos;
-        m_blip.localScale = new Vector3(0.02f, 0.02f, 0.02f) * scale / 1.5f;
+        m_blip.localScale = new Vector3(0.02f, 0.02f, 0.02f) * scale;
     }
 }

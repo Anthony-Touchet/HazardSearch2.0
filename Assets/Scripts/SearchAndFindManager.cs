@@ -14,11 +14,15 @@ public class SearchAndFindManager : MonoBehaviour
         List<string> hazardNames = new List<string>();
 
         foreach(GameObject go in m_hazards){
+            if(go == null){
+                continue;
+            }
+
             var goodOn = go.transform.Find("Good").gameObject;
             if(goodOn != null && goodOn.activeSelf == true)
                 continue;
             
-            var highLight = go.transform.Find("Notice Me");
+            var highLight = go.transform.Find("Highlight");
 
             if(highLight == null)
                 continue;
@@ -34,6 +38,9 @@ public class SearchAndFindManager : MonoBehaviour
     [ContextMenu("Check Empty")]
     public void CheckEmpty(){
         foreach(GameObject go in m_hazards){
+            if(go == null){
+                continue;
+            }
             var goodOn = go.transform.Find("Good").gameObject;
             if(goodOn != null && goodOn.activeSelf == true)
                 continue;

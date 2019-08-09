@@ -49,10 +49,12 @@ public class ScoreKeeper : MonoBehaviour
         onScored += PacketRecieve;
 
         m_subscriptions.Subscribe("incrementcurrentscore", onScored);
+        m_subscriptions.Subscribe("setreview", SetText);
+        m_subscriptions.Subscribe("setmaxscore", SetMaxScore);
     }
 
     void Start(){
-        SetMaxScore();
+        //SetMaxScore();
     }
 
     public void AddToScore(int addition){
@@ -64,16 +66,6 @@ public class ScoreKeeper : MonoBehaviour
             m_rightVoiceOver.BeginCountdown();
         }
     }
-
-    // Depricated!    
-    // public void AppendQuestion(TMPro.TextMeshProUGUI text){
-    //     data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
-    //     data.m_questionCount++;
-    //     if(!m_demo)
-    //         MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, $"Wrong Question! Zone  {m_forceTeleport.currentPoint}");
-
-    //     m_wrongVoiceOver.BeginCountdown();
-    // }
 
     public void AppendHazard(List<string> names, int hazardCount){
         foreach(string s in names){
@@ -121,25 +113,32 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
+    private void SetMaxScore(Mouledoux.Callback.Packet data){
+        SetMaxScore(data.ints[0]);
+    }
+
+    private void SetMaxScore(int score){
+        data.m_maxScore = score;
+    }
+
     public void PacketRecieve(Mouledoux.Callback.Packet pack)
     {
         AddToScore((int)pack.floats[0]);
     }
 
-    public void SetText(){
+    public void SetText(Mouledoux.Callback.Packet pack){
         string result = "";
-        var inst = m_dataHolder;
         result += $"Congratulations!\n";
         result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
-        result += "You missed " + data.m_questionCount + " question(s) and " + data.m_hazardCount +
+        result += "You missed " + data.m_hazardCount +
             " hazard(s).";
 
         m_resultsScreen.text = result;
 
-        string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}-- User missed {data.m_questionCount} question(s) and {data.m_hazardCount} hazard(s).";
-        MironDB.MironDB_Manager.UpdateTest((int)DataBase.DBCodeAtlas.WRONG, message);
+        string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}-- User missed {data.m_hazardCount} hazard(s).";
+        //MironDB.MironDB_Manager.UpdateTest((int)DataBase.DBCodeAtlas.WRONG, message);
 
-        MironDB_TestManager.instance.FinishTest(new Mouledoux.Callback.Packet());
+        //MironDB_TestManager.instance.FinishTest(new Mouledoux.Callback.Packet());
     }
 
     public void GetQuestionAndGivenAnswer(GameObject go)
@@ -243,9 +242,5 @@ public class ScoreKeeper : MonoBehaviour
     public void LoadData(){
         QuestionHazardData d = SaveLocally.LoadScoreData("0001_anthonyjtouchet@gmail.com.xml");
         Debug.Log(d.m_questionCount);
-    }
-
-    public void CallSceneEnd(string name){
-        m_dataHolder.GoToScene(name);
     }
 }
