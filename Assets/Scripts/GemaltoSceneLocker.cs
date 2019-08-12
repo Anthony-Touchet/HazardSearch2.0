@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Xml.Serialization;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -7,13 +8,14 @@ using Aladdin.HASP;
 
 public class GemaltoSceneLocker : MonoBehaviour
 {
-    public bool waitForKeyPass;
-    
-    public UnityEngine.Events.UnityEvent onKeyCheckPass;
-    public UnityEngine.Events.UnityEvent onKeyCheckFail;
-
-
     private Hasp hasp;
+    //public float keyCheckInterval = 60f;
+
+    [Space]
+    public UnityEngine.Events.UnityEvent onKeyConnectFail, onKeyConnectPass;
+    [Space]
+    public UnityEngine.Events.UnityEvent onKeyCheckFail, onKeyCheckPass;
+
     private string vendorCode =
         "pEl9GkEx50FvJgYEJRAQZRitr7/xkSIWx8dqPJ6lwu9qZIY4AZJvFhOqDN9DC0bgfq+GUcbR/1URnMaL" +
         "660OVvvBntLtBV9mfhRs91g5AWQO/zzCvQG/RwpCVElxZy2X7u1GQWR7iqGEmG47GzGtFCZmnwAv2fLt" +
@@ -32,29 +34,40 @@ public class GemaltoSceneLocker : MonoBehaviour
 
     private IEnumerator Start()
     {
-        if(!KeyIsConnected())
+        yield return new WaitForSeconds(1f);
+
+        if(KeyIsConnected())
+        {
+            onKeyConnectPass.Invoke();
+            
+            MironDB.MironDB_Manager.statusReturn = null;
+            MironDB.MironDB_Manager.CheckKey(GetKeyID());
+            yield return new WaitWhile(() => MironDB.MironDB_Manager.statusReturn == null);
+
+            if(MironDB.MironDB_Manager.statusReturn.status == "ok")
+            {
+                onKeyCheckPass.Invoke();
+            }
+
+            else
+            {
+                onKeyCheckFail.Invoke();
+            }
+            
+        }
+
+        else
         {
             string path = UnityEngine.Application.dataPath + "/_UserInformation/BinaryData/key.ezm";
             if (!System.IO.File.Exists(path))
             {
-                onKeyCheckFail.Invoke();
+                onKeyConnectFail.Invoke();
             }
-
-            if(waitForKeyPass)
-            {
-                while(!KeyIsConnected())
-                {
-                    yield return new WaitForSeconds(4f);
-                }
-            }
-
-            else yield break;
         }
 
-        onKeyCheckPass.Invoke();
-        yield return null;
     }
     
+
     private bool KeyIsConnected()
     {
         HaspFeature feature = HaspFeature.Default;
@@ -105,5 +118,30 @@ public class GemaltoSceneLocker : MonoBehaviour
 
 
         return HaspStatus.StatusOk == status;
+    }
+
+
+    private string GetKeyID()
+    {
+        string scope = 
+        "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" + 
+        "<haspscope/>";
+
+        string format = 
+        "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" + 
+        "<haspformat root=\"haspscope\">" + 
+        "    <hasp>" + 
+        "        <attribute name=\"id\" />" + 
+        "    </hasp>" + 
+        "</haspformat>";
+
+
+        string info = null;
+        HaspStatus status = Hasp.GetInfo(scope, format, vendorCode, ref info);
+
+        var splice = info.Split('>');
+        splice = splice[2].Split('"');
+
+        return splice[1];
     }
 }

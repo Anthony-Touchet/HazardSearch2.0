@@ -1,63 +1,54 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Valve.VR.InteractionSystem.Hand), typeof(LineRenderer))]
+[RequireComponent(typeof(OVRControllerHelper), typeof(LineRenderer))]
 public class ViveHandInteractionLaserPointer : MonoBehaviour
 {
+    public Material m_blipMaterial;
     private GameObject m_targetObject;
     private bool m_isHoldingSomething = false;
 
     private RaycastHit m_raycast;
 
-    private Valve.VR.InteractionSystem.Hand m_hand;
+    private OVRControllerHelper m_remote;
     private LineRenderer m_lineRenderer;
     private Vector3 m_endLinePos;
 
     private float m_timeOut;
 
+    private Transform m_blip;
+
     static bool hasTriggered = false;
 
     private bool m_controllerConnected
     {
-        get { return m_hand.isActive; }
+        get { return OVRInput.IsControllerConnected(m_remote.m_controller); }
     }
 
     // ---------- ---------- ---------- ---------- ----------
     void Start ()
     {
-        m_hand = GetComponent<Valve.VR.InteractionSystem.Hand>();
+        m_remote = GetComponent<OVRControllerHelper>();
         m_lineRenderer = GetComponent<LineRenderer>();
+        m_blip = GameObject.CreatePrimitive(PrimitiveType.Sphere).transform;
+        RestBlip();
     }
 
 
     // ---------- ---------- ---------- ---------- ----------
     void Update()
     {
-        #region original lazer
-        //if (m_controllerConnected)
-        //{
-        //    if (CheckObjectHit())
-        //    {
-        //        if (CheckForInteractableObject(m_targetObject))
-        //        {
-        //            if (CheckInput())
-        //            {
-        //                OnObjectInteract();
-        //            }
-        //        }
-        //    }
-        //}
-
-
-        //UpdateLaser();
-        #endregion
-
-
         if (m_controllerConnected)
         {
+            CheckObjectHit();
+
+            if(CheckInput())
+            {
+                Mouledoux.Components.Mediator.instance.NotifySubscribers("lasertriggeron");
+            }
+
             if (CheckLongInput())   // We are holding down the trigger
             {
                 m_timeOut+= Time.deltaTime;
-                CheckObjectHit();
             }
 
             else if (CheckOffInput() && m_targetObject != null) // We have let go of the trigger, AND have a target object
@@ -68,13 +59,19 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
                 }
             }
 
+            else if (CheckOffInput())
+            {
+                Mouledoux.Components.Mediator.instance.NotifySubscribers("lasertriggeroff");
+                RestBlip();
+            }
+
             else
             {
                 m_timeOut = 0f;
             }
         }
 
-        bool[] extraLazerConditions = { CheckLongInput() };
+        bool[] extraLazerConditions = { true };
         UpdateLaser(extraLazerConditions);
     }
 
@@ -82,35 +79,46 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     public bool CheckObjectHit()
     {
-        if (Physics.Raycast(m_hand.transform.position, m_hand.transform.forward, out m_raycast))
+        if (Physics.Raycast(m_remote.transform.position, m_remote.transform.forward, out m_raycast))
         {
             if (m_targetObject != m_raycast.transform.gameObject && !m_isHoldingSomething && m_timeOut < 4f)
             {
                 if (m_targetObject != null)
                 {
+                    Mouledoux.Components.Mediator.instance.NotifySubscribers("offhighlight");
+
+                    //RestBlip();
+
                     Mouledoux.Components.Mediator.instance.NotifySubscribers
-                        (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+                        (m_targetObject.GetInstanceID().ToString() + "->offhighlight");
                 }
                 
                 m_targetObject = m_raycast.transform.gameObject;
 
-                Mouledoux.Components.Mediator.instance.NotifySubscribers
-                    (m_targetObject.GetInstanceID().ToString() + "->onhighlight", new Mouledoux.Callback.Packet());
-            }
+                
+                Mouledoux.Components.Mediator.instance.NotifySubscribers("onhighlight");
 
+                Mouledoux.Components.Mediator.instance.NotifySubscribers
+                    (m_targetObject.GetInstanceID().ToString() + "->onhighlight");
+            }
+            
             m_endLinePos = m_raycast.point;
             return true;
         }
 
         else if (m_targetObject != null)
         {
+            Mouledoux.Components.Mediator.instance.NotifySubscribers("offhighlight");
+            
+            //RestBlip();
+
             Mouledoux.Components.Mediator.instance.NotifySubscribers
-                (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+                (m_targetObject.GetInstanceID().ToString() + "->offhighlight");
 
             m_targetObject = null;
         }
 
-        m_endLinePos = m_hand.transform.position + m_hand.transform.forward;
+        m_endLinePos = m_remote.transform.position + m_remote.transform.forward;
         return false;
     }
 
@@ -126,7 +134,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public bool CheckInput()
     {
         //m_hand.controller.TriggerHapticPulse();
-        return (m_hand.grabPinchAction.stateDown);
+        //return (m_hand.grabPinchAction.stateDown);
+        return OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
     }
 
 
@@ -134,7 +143,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public bool CheckLongInput()
     {
         //m_hand.controller.TriggerHapticPulse();
-        return (m_hand.GetBestGrabbingType() == Valve.VR.InteractionSystem.GrabTypes.Pinch);
+        //eturn (m_hand.GetBestGrabbingType() == Valve.VR.InteractionSystem.GrabTypes.Pinch);
+        return OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
     }
 
 
@@ -142,7 +152,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public bool CheckOffInput()
     {
         //m_hand.controller.TriggerHapticPulse();
-        return (m_hand.grabPinchAction.stateUp);
+        //return (m_hand.grabPinchAction.stateUp);
+        return OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger);
     }
 
 
@@ -151,8 +162,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         InteractableObject io = m_targetObject.GetComponent<InteractableObject>();
 
+        
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("oninteract");
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (m_targetObject.GetInstanceID().ToString() + "->oninteract", new Mouledoux.Callback.Packet());
+            (m_targetObject.GetInstanceID().ToString() + "->oninteract");
 
         if (io.m_interactionType == InteractableObject.InteractionType.PICKUP && !io.m_lockedInPlace)
         {
@@ -190,7 +204,15 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         }
 
         m_lineRenderer.enabled = m_controllerConnected && extraCondition;
-        m_lineRenderer.SetPositions( new Vector3[] {m_hand.transform.position, m_endLinePos});
+        m_lineRenderer.SetPositions( new Vector3[] {m_remote.transform.position, m_remote.transform.position + m_remote.transform.forward});
+        
+        if(Vector3.Distance(m_raycast.point, transform.position) >= 25){
+            RestBlip();
+        }
+
+        else{
+            SetBlip(m_endLinePos, (m_raycast.point - transform.position).magnitude);
+        }
     }
 
 
@@ -213,8 +235,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             yield return null;
         }
 
+        
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("offinteract");
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (go.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+            (go.gameObject.GetInstanceID().ToString() + "->offinteract");
 
         go.transform.parent = m_raycast.transform;
         go.transform.position = m_raycast.point;
@@ -226,7 +251,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
         if (!hasTriggered)
         {
-            Mouledoux.Components.Mediator.instance.NotifySubscribers("trigger", new Mouledoux.Callback.Packet());
+            Mouledoux.Components.Mediator.instance.NotifySubscribers("trigger");
             hasTriggered = true;
         }
     }
@@ -237,11 +262,14 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         yield return new WaitWhile(() => (CheckLongInput()));
 
-        Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("offinteract");
 
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+            (go.GetInstanceID().ToString() + "->offinteract");
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers
+            (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->offinteract");
     }
 
 
@@ -250,8 +278,12 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         yield return new WaitWhile(() => (CheckInput()));
 
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("offinteract");
+        
+
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+            (go.GetInstanceID().ToString() + "->offinteract");
     }
 
 
@@ -259,5 +291,16 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public void OnDestroy()
     {
         hasTriggered = false;
+    }
+
+    private void RestBlip(){
+        m_blip.localScale = new Vector3(0, 0, 0);
+        m_blip.GetComponent<Collider>().enabled = false;
+        m_blip.GetComponent<Renderer>().material = m_blipMaterial;
+    }
+
+    private void SetBlip(Vector3 pos, float scale){
+        m_blip.position = pos;
+        m_blip.localScale = new Vector3(0.02f, 0.02f, 0.02f) * scale;
     }
 }

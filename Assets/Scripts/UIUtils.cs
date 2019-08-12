@@ -50,7 +50,7 @@ public class UIUtils : MonoBehaviour
         GoToSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
-    public void GoToSceneAsync(Dropdown dropdown)
+    public void GoToSceneAsync(TMPro.TMP_Dropdown dropdown)
     {
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(dropdown.captionText.text);
     }
@@ -78,9 +78,12 @@ public class UIUtils : MonoBehaviour
 
     public void SetSceneLoadMessage(string message)
     {
-        SceneLoader._instance.SetLoadMessage(message);
+        SceneLoader._instance.SetSoloMessage(message);
         print(message);
     }
 
+    public void DebugAction(string message){
+        print(message);
+    }
     
 }

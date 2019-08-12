@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class RandomHazardManager : MonoBehaviour
 {
-    private static RandomHazardManager _instance;
-
-    public static RandomHazardManager instance{
-        get{
-            if(_instance == null)
-                _instance = FindObjectOfType<RandomHazardManager>();
-
-            return _instance;
-        }
-    }
-
     public enum HazardFrequency
     {
         ALL,
@@ -46,8 +35,6 @@ public class RandomHazardManager : MonoBehaviour
     }
 
     void Start(){
-        if(instance != this)
-            Destroy(gameObject);
         Initalize();
     }
 
@@ -92,8 +79,8 @@ public class RandomHazardManager : MonoBehaviour
 
                 break;
         }
-        var packet = new Mouledoux.Callback.Packet(new int[0], new bool[1], new float[1], new string[0]);
-        packet.floats[0] = m_activeHazardCount;
+        var packet = new Mouledoux.Callback.Packet(new int[1], new bool[1], new float[1], new string[0]);
+        packet.ints[0] = m_activeHazardCount;
 
         Mouledoux.Components.Mediator.instance.NotifySubscribers("setmaxscore", packet);
 
@@ -165,6 +152,7 @@ public class RandomHazardManager : MonoBehaviour
             if(m_hazardList[selection].activeSelf == true)
             {
                 m_hazardList[selection].SetActive(false);
+                Destroy(m_hazardList[selection]);
                 deactivateNumber--;
                 m_activeHazardCount--;
             }
@@ -331,5 +319,9 @@ public class RandomHazardManager : MonoBehaviour
             missedHazardsName[i] = m_activeObjects[i].name;
         }
         return missedHazardsName;
+    }
+
+    private void OnDestroy() {
+        m_subscriptions.UnsubscribeAll();
     }
 }

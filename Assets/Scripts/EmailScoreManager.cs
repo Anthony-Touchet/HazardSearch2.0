@@ -20,7 +20,8 @@ public class EmailScoreManager : MonoBehaviour
 
     public void SendMailToStudent()
     {
-        string score = RandomHazardManager.instance.MakeResultString();
+        var randomHazards = FindObjectOfType<RandomHazardManager>();
+        string score = randomHazards.MakeResultString();
         teacherMasterScoreEmail += PlayerPrefs.GetString("studentEmail") + ": " + score + "\n\n";
 
         SendMail("no-reply@tantrumlab.com", PlayerPrefs.GetString("studentEmail"),

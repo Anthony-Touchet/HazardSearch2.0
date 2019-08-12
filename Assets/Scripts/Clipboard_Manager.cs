@@ -77,8 +77,9 @@ public class Clipboard_Manager : MonoBehaviour
     }
 
     private void PrintReview(Mouledoux.Callback.Packet packet){
-        SetText(m_bigText, RandomHazardManager.instance.MakeResultString());
-        SetText(m_endScreen, RandomHazardManager.instance.MakeResultString());
+        var randomHazards = FindObjectOfType<RandomHazardManager>();
+        SetText(m_bigText, randomHazards.MakeResultString());
+        SetText(m_endScreen, randomHazards.MakeResultString());
     }
 
 

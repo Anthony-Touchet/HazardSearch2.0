@@ -79,11 +79,12 @@ public class OfflineUserInfo : MonoBehaviour
         System.IO.StreamWriter file = System.IO.File.AppendText(csvFile);
 
 
+        var randomHazards = FindObjectOfType<RandomHazardManager>();
 
         info += Date() + ", ";
         info += PlayerPrefs.GetString("studentEmail") + ", ";
         info += PlayerPrefs.GetString("level") + ", ";
-        info += RandomHazardManager.instance.m_hazardFrequency.ToString() + ", ";
+        info += randomHazards.m_hazardFrequency.ToString() + ", ";
         info += ScoreManager.instance.GetCurrentScore() + ", ";
         info += ScoreManager.instance.gradeResult.ToString("0") + ", ";
         //info += RandomHazardManager.

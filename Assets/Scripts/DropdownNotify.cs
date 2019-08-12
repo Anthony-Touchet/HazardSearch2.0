@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UnityEngine.UI.Dropdown))]
 public class DropdownNotify : MonoBehaviour
 {
-    private UnityEngine.UI.Dropdown _dropdown;
+    private TMPro.TMP_Dropdown _dropdown;
 
     private void Start()
     {
-        _dropdown = GetComponent<UnityEngine.UI.Dropdown>();
+        _dropdown = GetComponent<TMPro.TMP_Dropdown>();
     }
 
     public void BroadcastSelectedElement()
