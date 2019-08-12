@@ -82,5 +82,8 @@ public class UIUtils : MonoBehaviour
         print(message);
     }
 
+    public void DebugAction(string message){
+        print(message);
+    }
     
 }

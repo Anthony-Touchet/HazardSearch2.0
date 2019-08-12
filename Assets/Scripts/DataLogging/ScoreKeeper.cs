@@ -136,9 +136,9 @@ public class ScoreKeeper : MonoBehaviour
         m_resultsScreen.text = result;
 
         string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}-- User missed {data.m_hazardCount} hazard(s).";
-        //MironDB.MironDB_Manager.UpdateTest((int)DataBase.DBCodeAtlas.WRONG, message);
+        MironDB.MironDB_Manager.UpdateTest((int)DataBase.DBCodeAtlas.WRONG, message);
 
-        //MironDB_TestManager.instance.FinishTest(new Mouledoux.Callback.Packet());
+        MironDB_TestManager.instance.FinishTest(new Mouledoux.Callback.Packet());
     }
 
     public void GetQuestionAndGivenAnswer(GameObject go)
