@@ -15,7 +15,7 @@ public class RandomHazardManager : MonoBehaviour
     private int m_activeHazardCount = 0;
 
     public int m_seed;
-    public List<GameObject> m_hazardList;   //List of the hazards or the parents of the hazards.
+    public List<GameObject> m_hazardList = new List<GameObject>();   //List of the hazards or the parents of the hazards.
     public bool m_parentIsGroup;            //Are the hazards children of GameObjects?
 
     public HazardFrequency m_hazardFrequency;

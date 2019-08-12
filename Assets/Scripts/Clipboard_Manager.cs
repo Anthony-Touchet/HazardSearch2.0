@@ -81,4 +81,10 @@ public class Clipboard_Manager : MonoBehaviour
         SetText(m_bigText, randomHazards.MakeResultString());
         SetText(m_endScreen, randomHazards.MakeResultString());
     }
+
+
+    private void OnDestroy()
+    {
+        m_subscriptions.UnsubscribeAll();
+    }
 }
