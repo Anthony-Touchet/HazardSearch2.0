@@ -35,24 +35,14 @@ public class MironDB_TestManager : MonoBehaviour
     {
         transform.parent = null;
         if(instance != this) Destroy(gameObject);
-        subscriptions.Subscribe("SceneUnlocked", InitalizeScene);
+        //subscriptions.Subscribe("SceneUnlocked", InitalizeScene);
+        InitalizeScene(new Mouledoux.Callback.Packet());
     }
 
-
+    Mouledoux.Callback.Callback finishTest = null;
 
     Mouledoux.Components.Mediator.Subscriptions subscriptions =
         new Mouledoux.Components.Mediator.Subscriptions();
-
-    Mouledoux.Callback.Callback dropObjectFail = null;
-    Mouledoux.Callback.Callback highWindFail = null;
-    Mouledoux.Callback.Callback highWavesFail = null;
-    Mouledoux.Callback.Callback overbearingLoadFail = null;
-    Mouledoux.Callback.Callback riggerDeath = null;
-    Mouledoux.Callback.Callback finishTest = null;
-    Mouledoux.Callback.Callback loadOverRigger = null;
-    Mouledoux.Callback.Callback emergencyStop = null;
-    Mouledoux.Callback.Callback pShockload = null, pSideload = null, pLoadSpeed = null, pCollision = null, craneThroughRig = null;
-    Mouledoux.Callback.Callback lAngleSteep = null, lLoadSpeed = null, lCollision = null, lAcceleration = null;
 
     bool m_waitingForNewScene = false;
     //static bool isExam = false;
@@ -68,7 +58,7 @@ public class MironDB_TestManager : MonoBehaviour
 
         if(!MironDB.MironDB_Manager.isExam)
         {
-            MironDB.MironDB_Manager.StartTest(1000 + testScenarioID);
+            MironDB.MironDB_Manager.StartTest(testScenarioID);
         }
 
 
@@ -144,65 +134,35 @@ public class MironDB_TestManager : MonoBehaviour
 
         print("ending test...");
 
-        UIUtils util = FindObjectOfType<UIUtils>();
+        // UIUtils util = FindObjectOfType<UIUtils>();
 
-        yield return null;
+        // yield return null;
 
-        if(!testComplete && !passed)
-        {
-            MironDB.MironDB_Manager.UpdateTest((int)MironDB.DB_CODES.HAZARD_EVENT, "DNF");
-            //isExam = false;
-        }
-
-        else if(passed && !MironDB.MironDB_Manager.isExam)
-        {
-            var canvas = GameObject.Find("TaskCanvas");
-            foreach(Transform t in canvas.transform){
-                t.gameObject.SetActive(false);
-            }   
-
-            //canvas.transform.Find("Pass Text (TMP)").gameObject.SetActive(true);
-            var TMPs = Resources.FindObjectsOfTypeAll(typeof(TMPro.TextMeshProUGUI));
-            foreach(TMPro.TextMeshProUGUI t in TMPs){
-                if(t.gameObject.name == "Pass Text (TMP)" && t.transform.parent.gameObject.activeInHierarchy)
-                {
-                    t.gameObject.SetActive(true);
-                }
-            }
-            
-
-            MironDB.MironDB_Manager.UpdateTest((int)MironDB.DB_CODES.SCENE_EVENT, "No issues");
-        }
-
-
-        // if(MironDB.MironDB_Manager.isExam)
+        // if(!testComplete && passed)
         // {
-        //     MironDB.MironDB_Manager.UpdateTest((int)MironDB.DB_CODES.SCENE_EVENT, $"Exam scenario: {transform.root.name} end\n----- ----- -----");
-        //     yield return new WaitForEndOfFrame();
-            
-        //     if(SceneLoader._instance.GetGuidedProfile().scenarios.Count <= 1)
-        //     {
-        //         MironDB.MironDB_Manager.UpdateTest((int)MironDB.DB_CODES.SCENE_EVENT, "Graded exam has finished", 0, 1);
-        //         yield return new WaitForSeconds(1f);
-        //         MironDB.MironDB_Manager.FinishTest();
-        //         subscriptions.UnsubscribeAll();
-        //         util.GoToSceneAsync("UserHUB");
-        //     }
+        //     MironDB.MironDB_Manager.UpdateTest((int)MironDB.DB_CODES.HAZARD_EVENT, "DNF");
+        // }
 
-        //     else
-        //     {
-        //         Mouledoux.Components.Mediator.instance.NotifySubscribers("ScenarioComplete", null);
+        // else if(passed && !MironDB.MironDB_Manager.isExam)
+        // {
+        //     var canvas = GameObject.Find("TaskCanvas");
+        //     foreach(Transform t in canvas.transform){
+        //         t.gameObject.SetActive(false);
+        //     }   
+
+        //     var TMPs = Resources.FindObjectsOfTypeAll(typeof(TMPro.TextMeshProUGUI));
+        //     foreach(TMPro.TextMeshProUGUI t in TMPs){
+        //         if(t.gameObject.name == "Pass Text (TMP)" && t.transform.parent.gameObject.activeInHierarchy)
+        //         {
+        //             t.gameObject.SetActive(true);
+        //         }
         //     }
         // }
 
-        yield return new WaitForSeconds(1f);
+        // yield return new WaitForSeconds(1f);
         
         MironDB.MironDB_Manager.FinishTest();
         subscriptions.UnsubscribeAll();
-        
-        yield return new WaitForSeconds(5f);
-        util.SetSceneLoadMessage("rig");
-        util.GoToSceneAsync("LevelSelect");
 
         Destroy(gameObject);
     }

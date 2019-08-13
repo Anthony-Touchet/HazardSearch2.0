@@ -63,7 +63,7 @@ public class ScoreKeeper : MonoBehaviour
 
             // if(!m_demo)
             //     MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, $"");
-            m_rightVoiceOver.BeginCountdown();
+            //m_rightVoiceOver.BeginCountdown();
         }
     }
 
