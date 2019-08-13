@@ -1,7 +1,9 @@
 fileFormatVersion: 2
-guid: 9c0511d04560c5547a217787c6074413
+guid: 468d65481508a344bb01d4833ed3fe39
+timeCreated: 1536681552
+licenseType: Free
 ModelImporter:
-  serializedVersion: 23
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: _End
     100002: Attributes_Bill
@@ -309,29 +311,6 @@ ModelImporter:
     400300: tshirt_jeans_A
     400302: tshirt_jeans_B
     400304: UpperTeeth
-    2100000: plastic black
-    2100002: safety glasses
-    2100004: plastic yellow.1
-    2100006: foam
-    2100008: Jim_hair
-    2100010: Teeth
-    2100012: Head Jim
-    2100014: Head John
-    2100016: Head Bill
-    2100018: Head Lee
-    2100020: coat safety
-    2100022: overall_safety
-    2100024: Skin man light
-    2100026: Sweater_jeans
-    2100028: Tshirt_jeans_A
-    2100030: Tshirt_safety_jeans_B
-    2100032: Skin man dark
-    2100034: gloves
-    2100036: shoes safety
-    2100038: safety boots
-    2100040: Lashes1
-    2100042: pasted__iris
-    2100044: eye surface
     2300000: ear_protection
     2300002: ear_protection_2
     2300004: ear_protection_3
@@ -421,117 +400,117 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Head Bill
-    second: {fileID: 2100000, guid: d17608fb8ec186d4ba8c22d5bf099415, type: 2}
+    second: {fileID: 2100000, guid: b921988b5d679ec41972474194759f96, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Head Jim
-    second: {fileID: 2100000, guid: 2be15e2893bbab848ab4270f8e905c73, type: 2}
+    second: {fileID: 2100000, guid: 1a4acf0fb29106249a0e250468bf0361, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Head John
-    second: {fileID: 2100000, guid: 0f49fc1e7bf6057449b55c3cd538616a, type: 2}
+    second: {fileID: 2100000, guid: 00601efebcd26934889f553a97a5b04d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Head Lee
-    second: {fileID: 2100000, guid: 8d3e4f977240bac4a92a023e8f1ad7a2, type: 2}
+    second: {fileID: 2100000, guid: 622aa81fd11929c4d896e2fde5cb9720, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Jim_hair
-    second: {fileID: 2100000, guid: 011afdbd1ab8edc4a92ec31895ab5a33, type: 2}
+    second: {fileID: 2100000, guid: f6fc479ba77d1d34796d27f56a8d3564, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Lashes1
-    second: {fileID: 2100000, guid: 181aafc63c64fba46b0405698598dc0c, type: 2}
+    second: {fileID: 2100000, guid: 1f5d29db60b528847986b27c0602400e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Skin man dark
-    second: {fileID: 2100000, guid: 3e96b218bec6e204d9e821dd1efe314b, type: 2}
+    second: {fileID: 2100000, guid: cb42e3e06bfaa634bb8b08888fe36b33, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Skin man light
-    second: {fileID: 2100000, guid: 4fe94a74e8a6e324bb500a56e1f7395f, type: 2}
+    second: {fileID: 2100000, guid: 9efb197f58883ed44998208607d83135, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sweater_jeans
-    second: {fileID: 2100000, guid: d49bcd10f38b61642a4c8830d0208f05, type: 2}
+    second: {fileID: 2100000, guid: b761822ce4660484eb89dfcdc1848198, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Teeth
-    second: {fileID: 2100000, guid: b25a569724f184041a6af38058453cbc, type: 2}
+    second: {fileID: 2100000, guid: 09348dffc9172064eb3e345709e0fdd4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tshirt_jeans_A
-    second: {fileID: 2100000, guid: 573d8fb0be2cd52449255b8b0a626f00, type: 2}
+    second: {fileID: 2100000, guid: 7d64da6516bab3d42bff10ee205908b4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tshirt_safety_jeans_B
-    second: {fileID: 2100000, guid: 2e4a9e1a73cd7c748a006ac05562783d, type: 2}
+    second: {fileID: 2100000, guid: 6520baf553be8e743ad339b91b961e1f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: coat safety
-    second: {fileID: 2100000, guid: f7f834b1332132046859bc1c9bb2b886, type: 2}
+    second: {fileID: 2100000, guid: 64c92bb80e239004682e2b272124413a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: eye surface
-    second: {fileID: 2100000, guid: 3a431d7820907014388498b0e1544571, type: 2}
+    second: {fileID: 2100000, guid: a2668c48ca05e9a4887f0aed8fed24a5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: foam
-    second: {fileID: 2100000, guid: 1c1990095f5343b40a3b847fb010900a, type: 2}
+    second: {fileID: 2100000, guid: 653c8d15f3730ff4eaffb3a5edc9e882, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: gloves
-    second: {fileID: 2100000, guid: 9764f3113da25bb4d86b1686c40810b1, type: 2}
+    second: {fileID: 2100000, guid: a65f0bf551346bb4495b03951c62a1f9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: overall_safety
-    second: {fileID: 2100000, guid: c9147f3f06ad49f41b34bdd8e0c74ada, type: 2}
+    second: {fileID: 2100000, guid: 4cd041efd03d97c499082692157d8867, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__iris
-    second: {fileID: 2100000, guid: 2ccbbf5036ed5b644b9a443bad376c99, type: 2}
+    second: {fileID: 2100000, guid: 04b8d6bed816c364c8c0bc39e079d375, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: plastic black
-    second: {fileID: 2100000, guid: 3cecf70600ae326488f4159c6da34ec9, type: 2}
+    second: {fileID: 2100000, guid: 845b1810db65e3c4cb7aab334f39a123, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: plastic yellow.1
-    second: {fileID: 2100000, guid: 8604a0c1e51563e4dabfe9bd536e23e7, type: 2}
+    second: {fileID: 2100000, guid: de6f72b079689144881125396f76fec5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: safety boots
-    second: {fileID: 2100000, guid: 14abac2915f78684bb99d62119c80972, type: 2}
+    second: {fileID: 2100000, guid: 75a8d97977e679745bb007eb2d1c6bf6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: safety glasses
-    second: {fileID: 2100000, guid: 3d59cfe37c8fe0447a0895355cb5c5f7, type: 2}
+    second: {fileID: 2100000, guid: 8adccceb3425f4444a43d1c959d0af3e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: shoes safety
-    second: {fileID: 2100000, guid: 3b1591e8ec642974e9414699976037b4, type: 2}
+    second: {fileID: 2100000, guid: a055d56af1177134f8ed393b957c29aa, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -550,7 +529,6 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -565,7 +543,6 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -583,16 +560,11 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -606,7 +578,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Pelvis
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da62299e1cc41764bb3e535a1b8a9670
+guid: 83fe39ca5c9abb942a723db924ffb626
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -563,7 +563,7 @@ ModelImporter:
       name: shoes safety
     second: {fileID: 2100000, guid: ba890ab47d6103441bee2b3564369e4d, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -2014,7 +2014,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
