@@ -82,6 +82,10 @@ public class UIUtils : MonoBehaviour
         print(message);
     }
 
+    public void SetSceneLoadMessage(TMPro.TMP_Dropdown tmp){
+        SetSceneLoadMessage(tmp.captionText.text);
+    }
+
     public void DebugAction(string message){
         print(message);
     }

@@ -26,7 +26,7 @@ public class SearchAndFindManager : MonoBehaviour
 
             if(highLight == null)
                 continue;
-
+                
             highLight.gameObject.SetActive(true);
             hazardNames.Add(go.name);
         }
@@ -59,7 +59,13 @@ public class SearchAndFindManager : MonoBehaviour
     }
 
     public void DestroyHazardScripts(){
-        foreach(GameObject go in m_hazards)
+        foreach(GameObject go in m_hazards){
+            if(go == null){
+                continue;
+            }
+            
             Destroy(go.GetComponent<HazardObject>());
+        }
+            
     }
 }

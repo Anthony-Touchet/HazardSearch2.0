@@ -32,9 +32,14 @@ public class RandomHazardManager : MonoBehaviour
         nextRailHandeler = SetLocalHazards;
         m_subscriptions.Subscribe("teleporting", nextRailHandeler);
         m_subscriptions.Subscribe("nolongeractive", removeObjectFromList);
+        m_subscriptions.Subscribe("Few Hazards", SetAFew);
+        m_subscriptions.Subscribe("Some Hazards", SetSome);
+        m_subscriptions.Subscribe("Most Hazards", SetMost);
+        m_subscriptions.Subscribe("All Hazards", SetAll);
     }
 
-    void Start(){
+    IEnumerator Start(){
+        yield return new WaitForEndOfFrame();
         Initalize();
     }
 
@@ -80,7 +85,7 @@ public class RandomHazardManager : MonoBehaviour
                 break;
         }
         var packet = new Mouledoux.Callback.Packet(new int[1], new bool[1], new float[1], new string[0]);
-        packet.ints[0] = m_activeHazardCount;
+        packet.ints[0] = m_activeObjects.Count;
 
         Mouledoux.Components.Mediator.instance.NotifySubscribers("setmaxscore", packet);
 
@@ -128,6 +133,26 @@ public class RandomHazardManager : MonoBehaviour
                 m_hazardFrequency = HazardFrequency.ALL;
                 break;
         }
+    }
+
+    public void SetAFew(Mouledoux.Callback.Packet pack){
+        m_hazardFrequency = HazardFrequency.AFEW;
+        print("A few");
+    }
+
+    public void SetSome(Mouledoux.Callback.Packet pack){
+        m_hazardFrequency = HazardFrequency.MOST;
+        print("Some");
+    }
+
+    public void SetMost(Mouledoux.Callback.Packet pack){
+        m_hazardFrequency = HazardFrequency.ALOT;
+        print("Most");
+    }
+
+    public void SetAll(Mouledoux.Callback.Packet pack){
+        m_hazardFrequency = HazardFrequency.ALL;
+        print("All");
     }
 
     public void SetSeed(int seed){
@@ -194,7 +219,7 @@ public class RandomHazardManager : MonoBehaviour
 
             if(m_hazardList[group].transform.GetChild(child).gameObject.activeSelf == true)
             {
-                m_hazardList[group].transform.GetChild(child).gameObject.SetActive(false);
+                Destroy(m_hazardList[group].transform.GetChild(child).gameObject);
                 deactivateNumber--;
                 m_activeHazardCount--;
                 foreach(Transform greatChild in m_hazardList[group].transform.GetChild(child)){ //Bad, Highlight, Good
@@ -219,6 +244,8 @@ public class RandomHazardManager : MonoBehaviour
                 }  
             }
         }
+
+
     }
 
     public string MakeResultString(){

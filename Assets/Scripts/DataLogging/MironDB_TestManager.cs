@@ -133,42 +133,13 @@ public class MironDB_TestManager : MonoBehaviour
         m_finishing = true;
 
         print("ending test...");
-
-        // UIUtils util = FindObjectOfType<UIUtils>();
-
-        // yield return null;
-
-        // if(!testComplete && passed)
-        // {
-        //     MironDB.MironDB_Manager.UpdateTest((int)MironDB.DB_CODES.HAZARD_EVENT, "DNF");
-        // }
-
-        // else if(passed && !MironDB.MironDB_Manager.isExam)
-        // {
-        //     var canvas = GameObject.Find("TaskCanvas");
-        //     foreach(Transform t in canvas.transform){
-        //         t.gameObject.SetActive(false);
-        //     }   
-
-        //     var TMPs = Resources.FindObjectsOfTypeAll(typeof(TMPro.TextMeshProUGUI));
-        //     foreach(TMPro.TextMeshProUGUI t in TMPs){
-        //         if(t.gameObject.name == "Pass Text (TMP)" && t.transform.parent.gameObject.activeInHierarchy)
-        //         {
-        //             t.gameObject.SetActive(true);
-        //         }
-        //     }
-        // }
-
-        // yield return new WaitForSeconds(1f);
         
         MironDB.MironDB_Manager.FinishTest();
-        subscriptions.UnsubscribeAll();
+
+        yield return new WaitForSeconds(1f);
 
         Destroy(gameObject);
     }
-
-
-
 
     // ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
     private void OnDestroy()
