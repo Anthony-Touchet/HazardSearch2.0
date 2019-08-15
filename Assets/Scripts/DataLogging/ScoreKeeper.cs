@@ -24,7 +24,6 @@ public class ScoreKeeper : MonoBehaviour
 
     public DelayEventOnStart m_wrongVoiceOver;
     public DelayEventOnStart m_rightVoiceOver;
-    public AudioSource m_audioSource;
     public float m_passingGrade;
 
     public int Score{
@@ -74,18 +73,30 @@ public class ScoreKeeper : MonoBehaviour
         }
 
         if(!m_demo){
-            string message = $"Hazard Area {m_forceTeleport.currentPoint}-- ";
+            string message = "";
+
+            if(m_forceTeleport.currentPoint <= 0){
+                message += "Hazard Awareness Simulation has begun.";
+                MironDB.MironDB_Manager.UpdateTest((int)DataBase.DBCodeAtlas.RIGHT, message);
+                return;
+            }
+
+            else{
+                message += $"Hazard Area {m_forceTeleport.currentPoint}-- ";
+            }
 
             if(names.Count > 0){
                 message += $"Missed {names.Count}/{hazardCount}: ";
                 foreach(string s in names){
                     message += (names[names.Count - 1] == s) ? s : s +", ";
                 }
+                m_wrongVoiceOver.BeginCountdown();
                 MironDB.MironDB_Manager.UpdateTest((int)DataBase.DBCodeAtlas.WRONG, message);
             }
 
             else{
                 message += "All hazards found.";
+                m_rightVoiceOver.BeginCountdown();
                 MironDB.MironDB_Manager.UpdateTest((int)DataBase.DBCodeAtlas.RIGHT, message);
             }
 

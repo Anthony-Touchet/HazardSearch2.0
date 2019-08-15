@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_delay: 0
-  m_onStart: 0
+  m_onStart: 1
   m_selfDestruct: 0
   m_action:
     m_PersistentCalls:
@@ -354,7 +354,7 @@ PrefabInstance:
     - target: {fileID: 1134401250712707704, guid: feff9b7b265493b4385366fb2942d51b,
         type: 3}
       propertyPath: m_Name
-      value: Worker Missing Harness New
+      value: Worker Missing Harness
       objectReference: {fileID: 0}
     - target: {fileID: 1134401250712707705, guid: feff9b7b265493b4385366fb2942d51b,
         type: 3}

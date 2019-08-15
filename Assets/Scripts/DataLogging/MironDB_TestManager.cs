@@ -134,9 +134,9 @@ public class MironDB_TestManager : MonoBehaviour
 
         print("ending test...");
         
-        MironDB.MironDB_Manager.FinishTest();
-
         yield return new WaitForSeconds(1f);
+
+        MironDB.MironDB_Manager.FinishTest();
 
         Destroy(gameObject);
     }

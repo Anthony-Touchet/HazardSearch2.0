@@ -301,6 +301,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
     private void SetBlip(Vector3 pos, float scale){
         m_blip.position = pos;
-        m_blip.localScale = new Vector3(0.02f, 0.02f, 0.02f) * scale;
+        var newScale = Mathf.Clamp(0.02f * scale, 0f, 0.15f);
+        m_blip.localScale = new Vector3(newScale, newScale, newScale);
+    }
+
+    public void BlipReadout(){
+        print($"The blip's scale is {m_blip.localScale}.");
     }
 }
