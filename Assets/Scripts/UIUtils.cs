@@ -73,7 +73,7 @@ public class UIUtils : MonoBehaviour
 
     public void NotifySubscribers(string subscription)
     {
-        Mouledoux.Components.Mediator.instance.NotifySubscribers(subscription, new Mouledoux.Callback.Packet());
+        Mouledoux.Components.Mediator.instance.NotifySubscribers(subscription, new object[]{});
     }
 
     public void SetSceneLoadMessage(string message)
@@ -90,4 +90,7 @@ public class UIUtils : MonoBehaviour
         print(message);
     }
     
+    public void ClickButton(Button b){
+        b.onClick.Invoke();
+    }
 }

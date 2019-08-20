@@ -55,7 +55,6 @@ namespace Valve.VR.InteractionSystem
 				{
 					_instance = FindObjectOfType<Player>();
 				}
-				
 				return _instance;
 			}
 		}

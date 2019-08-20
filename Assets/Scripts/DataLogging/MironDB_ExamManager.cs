@@ -28,7 +28,7 @@
 //         }
 
 
-//         public void LoadExamDetails(Mouledoux.Callback.Packet packet)
+//         public void LoadExamDetails(object[] args)
 //         {
 //             StopAllCoroutines();
 //             StartCoroutine(LoadExamDetailsRoutine());

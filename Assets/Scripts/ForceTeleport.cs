@@ -38,6 +38,8 @@ public class ForceTeleport : MonoBehaviour
 
         nextRailHandler += NextRailPoint;
         m_subscriptions.Subscribe("MoveToNextRailPoint", nextRailHandler);
+        var pack = new object[]{currentPoint};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("teleporting", pack);
     }
 
 
@@ -194,13 +196,12 @@ public class ForceTeleport : MonoBehaviour
             return;
         }
 
-        var pack = new Mouledoux.Callback.Packet();
-        pack.ints = new int[]{currentPoint};
+        var pack = new object[]{currentPoint};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("teleporting", pack);
         StartTeleport(railPoints[currentPoint]);
     }
 
-    public void NextRailPoint(Mouledoux.Callback.Packet pack)
+    public void NextRailPoint(object[] pack)
     {
         NextRailPoint();
     }

@@ -75,13 +75,13 @@ public class MironDB_TestManager : MonoBehaviour
         subscriptions.Subscribe("testcomplete", PassTest);
     }
 
-    private void PassTest(Mouledoux.Callback.Packet packet){
+    private void PassTest(object[] args){
         testComplete = true;
     }
 
 
     // ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-    private void FailTest(Mouledoux.Callback.Packet packet)
+    private void FailTest(object[] args)
     {
         testComplete = true;
 
@@ -93,14 +93,14 @@ public class MironDB_TestManager : MonoBehaviour
                 }
             }
 
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("PlayFailAudio", new Mouledoux.Callback.Packet());
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("PlayFailAudio", new object[]{});
 
         if(!passed) return;
         passed = false;
 
         //MironDB.MironDB_Manager.UpdateTest(1, "Fail");
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("DB_FAIL", new Mouledoux.Callback.Packet());
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("endtest", new Mouledoux.Callback.Packet());
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("DB_FAIL", new object[]{});
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("endtest", new object[]{});
     }
 
 
@@ -118,7 +118,7 @@ public class MironDB_TestManager : MonoBehaviour
 
     // ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
     // Finish test, and send any edge case messages
-    public void FinishTest(Mouledoux.Callback.Packet packet)
+    public void FinishTest(object[] args)
     {
         StartCoroutine(FinishTestRoutine());
     }

@@ -38,7 +38,7 @@ public class QuickSubscribe : MonoBehaviour
 
         public Mouledoux.Callback.Callback m_subCallback;
         
-        public void InvokeUnityEvent(Mouledoux.Callback.Packet emptyPacket)
+        public void InvokeUnityEvent(object[] emptyPacket)
         { m_event.Invoke(); }
     }
 }

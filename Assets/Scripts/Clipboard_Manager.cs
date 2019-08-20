@@ -60,23 +60,23 @@ public class Clipboard_Manager : MonoBehaviour
         textField.text = message;
     }
 
-    private void SetBigText(Mouledoux.Callback.Packet packet){
-        SetText(m_bigText, packet.strings[0]);
+    private void SetBigText(object[] args){
+        SetText(m_bigText, (string)args[0]);
     }
 
-    private void AppendBigText(Mouledoux.Callback.Packet packet){
-        AppendText(m_bigText, packet.strings[0]);
+    private void AppendBigText(object[] args){
+        AppendText(m_bigText, (string)args[0]);
     }
 
-    private void SetSmallText(Mouledoux.Callback.Packet packet){
-        SetText(m_smallText, packet.strings[0]);
+    private void SetSmallText(object[] args){
+        SetText(m_smallText, (string)args[0]);
     }
 
-    private void AppendSmallText(Mouledoux.Callback.Packet packet){
-        AppendText(m_smallText, packet.strings[0]);
+    private void AppendSmallText(object[] args){
+        AppendText(m_smallText, (string)args[0]);
     }
 
-    private void PrintReview(Mouledoux.Callback.Packet packet){
+    private void PrintReview(object[] args){
         var randomHazards = FindObjectOfType<RandomHazardManager>();
         SetText(m_bigText, randomHazards.MakeResultString());
         SetText(m_endScreen, randomHazards.MakeResultString());

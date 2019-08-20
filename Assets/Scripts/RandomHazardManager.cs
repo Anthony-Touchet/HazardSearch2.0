@@ -84,24 +84,22 @@ public class RandomHazardManager : MonoBehaviour
 
                 break;
         }
-        var packet = new Mouledoux.Callback.Packet(new int[1], new bool[1], new float[1], new string[0]);
-        packet.ints[0] = m_activeObjects.Count;
+        var packet = new object[]{m_activeObjects.Count, null, null};
 
         Mouledoux.Components.Mediator.instance.NotifySubscribers("setmaxscore", packet);
 
-        packet.floats[0] = 0;
-        packet.bools[0] = true;
+        packet[1] = 0;
+        packet[2] = true;
         
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("setcurrentscore", packet);
-        var pack = new Mouledoux.Callback.Packet();
-        pack.ints = new int[]{0};
+        //Mouledoux.Components.Mediator.instance.NotifySubscribers("setcurrentscore", packet);
+        var pack = new object[]{0};
         
         SetLocalHazards(pack);
     }
 
-    private void SetLocalHazards(Mouledoux.Callback.Packet packet){
+    private void SetLocalHazards(object[] args){
         foreach(GameObject go in m_hazardList){
-            if(m_hazardList[packet.ints[0]] == go)
+            if(m_hazardList[(int)args[0]] == go)
             {
                 foreach(Transform trans in go.transform){
                 trans.gameObject.SetActive(true);
@@ -135,22 +133,22 @@ public class RandomHazardManager : MonoBehaviour
         }
     }
 
-    public void SetAFew(Mouledoux.Callback.Packet pack){
+    public void SetAFew(object[] pack){
         m_hazardFrequency = HazardFrequency.AFEW;
         print("A few");
     }
 
-    public void SetSome(Mouledoux.Callback.Packet pack){
+    public void SetSome(object[] pack){
         m_hazardFrequency = HazardFrequency.MOST;
         print("Some");
     }
 
-    public void SetMost(Mouledoux.Callback.Packet pack){
+    public void SetMost(object[] pack){
         m_hazardFrequency = HazardFrequency.ALOT;
         print("Most");
     }
 
-    public void SetAll(Mouledoux.Callback.Packet pack){
+    public void SetAll(object[] pack){
         m_hazardFrequency = HazardFrequency.ALL;
         print("All");
     }
@@ -317,11 +315,11 @@ public class RandomHazardManager : MonoBehaviour
         return hazards;
     }
 
-    private void RemoveGameObject(Mouledoux.Callback.Packet pack){
+    private void RemoveGameObject(object[] pack){
         var newList = m_activeObjects;
 
         foreach(GameObject go in newList){
-            if(go.GetInstanceID() == pack.ints[0])
+            if(go.GetInstanceID() == (int)pack[0])
                 m_activeObjects.Remove(go);
         }
     }

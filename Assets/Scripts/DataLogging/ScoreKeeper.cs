@@ -124,20 +124,20 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    private void SetMaxScore(Mouledoux.Callback.Packet data){
-        SetMaxScore(data.ints[0]);
+    private void SetMaxScore(object[] data){
+        SetMaxScore((int)data[0]);
     }
 
     private void SetMaxScore(int score){
         data.m_maxScore = score;
     }
 
-    public void PacketRecieve(Mouledoux.Callback.Packet pack)
+    public void PacketRecieve(object[] pack)
     {
-        AddToScore((int)pack.floats[0]);
+        AddToScore((int)(float)pack[0]);
     }
 
-    public void SetText(Mouledoux.Callback.Packet pack){
+    public void SetText(object[] pack){
         string result = "";
         result += $"Congratulations!\n";
         result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
@@ -149,7 +149,7 @@ public class ScoreKeeper : MonoBehaviour
         string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}-- User missed {data.m_hazardCount} hazard(s).";
         MironDB.MironDB_Manager.UpdateTest((int)DataBase.DBCodeAtlas.WRONG, message);
 
-        MironDB_TestManager.instance.FinishTest(new Mouledoux.Callback.Packet());
+        MironDB_TestManager.instance.FinishTest(new object[]{});
     }
 
     public void GetQuestionAndGivenAnswer(GameObject go)

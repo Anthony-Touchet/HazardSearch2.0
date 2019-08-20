@@ -87,15 +87,15 @@ public class ScoreManager : MonoBehaviour
         m_maxScore = 0;
     }
 
-    private void SetMaxScore(Mouledoux.Callback.Packet data){
-        SetMaxScore(data.floats[0]);
+    private void SetMaxScore(object[] data){
+        SetMaxScore((float)data[0]);
     }
 
-    private void SetCurrentScore(Mouledoux.Callback.Packet data){
-        SetCurrentScore(data.floats[0], data.bools[0]);
+    private void SetCurrentScore(object[] data){
+        SetCurrentScore((float)data[0], (bool)data[1]);
     }
 
-    private void ClearScores(Mouledoux.Callback.Packet data){
+    private void ClearScores(object[] data){
        ClearBothScores();
     }
 }

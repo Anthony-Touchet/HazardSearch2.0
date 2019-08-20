@@ -33,6 +33,10 @@ public class CompanyID : MonoBehaviour
         }
     }
 
+    public void StartCheckKey(){
+        StartCoroutine(CheckCompanyKey());
+    }
+
     public void SaveCompanyID()
     {
         MironDB.MironDB_Manager.machineID = idInput.text;

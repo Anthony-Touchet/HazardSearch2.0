@@ -77,7 +77,7 @@ public class SceneLoader : MonoBehaviour
         {
             foreach(string message in onLoadMessages)
             {
-                Mouledoux.Components.Mediator.instance.NotifySubscribers(message, new Mouledoux.Callback.Packet());
+                Mouledoux.Components.Mediator.instance.NotifySubscribers(message, new object[]{});
                 print($"{message} from {name}");
             }
         }
@@ -93,7 +93,7 @@ public class SceneLoader : MonoBehaviour
     }
 
     // ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-    public void LoadNextGuidedScenario(Mouledoux.Callback.Packet dataPack)
+    public void LoadNextGuidedScenario(object[] dataPack)
     {
         DelayLoadNextGuidedScenario();
     }

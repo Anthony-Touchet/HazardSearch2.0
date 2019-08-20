@@ -7,7 +7,7 @@ namespace MironDB
 	public class MironDB_Manager : MonoBehaviour
 	{
 		[SerializeField]
-		public static string dbURI = "https://tantrum.raxxar.com/api";
+		public static string dbURI = "https://dashboard.tantrumlab.com/api";
 		
 		private static MironDB_Manager _instance;
 		public static MironDB_Manager instance

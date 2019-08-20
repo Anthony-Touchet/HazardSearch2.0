@@ -11,9 +11,11 @@ public class HoleCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float angle = Vector3.Angle(m_playerCameraTransform.forward, m_holeCameraTransform.position.normalized);
-        if(angle > 90){
-            m_holeCameraTransform.forward = m_playerCameraTransform.forward; 
-        }
+        var lookDirection = (m_holeTransform.position - m_playerCameraTransform.position).normalized;
+        m_holeCameraTransform.forward = lookDirection;
+        // float angle = Vector3.Angle(m_playerCameraTransform.forward, m_holeCameraTransform.position.normalized);
+        // if(angle > 90){
+        //     m_holeCameraTransform.forward = m_playerCameraTransform.forward;
+        // }
     }
 }
